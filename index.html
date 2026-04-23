@@ -12,53 +12,87 @@
     <link rel="icon" href="/ecosysteme-alpha-fle/assets/images/favicon.ico">
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
         <div class="navbar-container">
-            <a href="/" class="navbar-logo">
-                <img src="/ecosysteme-alpha-fle/assets/images/logo.png" alt="Logo" class="logo-img">
+            <a href="/ecosysteme-alpha-fle/" class="navbar-logo" aria-label="Accueil">
+                <img src="/ecosysteme-alpha-fle/assets/images/logo.png" alt="Logo Armée du Salut" class="logo-img">
                 <span class="navbar-title">Formateurs de Français</span>
+                <span class="navbar-subtitle">Fondation Armée du Salut</span>
             </a>
-            <ul class="navbar-menu">
-                <li class="nav-item"><a href="/" class="nav-link">Accueil</a></li>
-                <li class="nav-item"><a href="pages/agir-suivant-des-valeurs/">Agir suivant des valeurs</a></li>
-                <li class="nav-item"><a href="pages/gerer-un-groupe.html">Gérer un groupe</a></li>
-                <li class="nav-item"><a href="pages/employer-une-methode/">Employer une méthode</a></li>
-                <li class="nav-item"><a href="pages/supports-telechargeables/">Supports</a></li>
-                <li class="nav-item"><a href="pages/sites-utiles/">Sites utiles</a></li>
-                <li class="nav-item"><a href="pages/activites-dun-jour.html">Activités d'un jour</a></li>
-                <li class="nav-item"><a href="pages/mallettes-locales/">Mallettes locales</a></li>
-                <li class="nav-item"><a href="pages/parcours-durables.html">Parcours durables</a></li>
-                <li class="nav-item"><a href="pages/evaluer/">Évaluer</a></li>
-                <li class="nav-item"><a href="pages/sinformer.html">S'informer</a></li>
-                <li class="nav-item"><a href="pages/se-former.html">Se former</a></li>
-                <li class="nav-item"><a href="pages/notice.html">Notice</a></li>
+            <button class="navbar-toggle" aria-label="Menu" aria-expanded="false" id="menu-toggle">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="navbar-menu" id="navbar-menu">
+                <li class="nav-item nav-item--active">
+                    <a href="/ecosysteme-alpha-fle/" class="nav-link">Accueil</a>
+                    <ul class="nav-submenu">
+                        <li><a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/">Agir suivant des valeurs</a></li>
+                        <li><a href="/ecosysteme-alpha-fle/pages/gerer-un-groupe.html">Gérer un groupe d'apprenants</a></li>
+                        <li><a href="/ecosysteme-alpha-fle/pages/employer-une-methode/">Employer une méthode</a></li>
+                        <li><a href="/ecosysteme-alpha-fle/pages/supports-telechargeables/">Supports téléchargeables</a></li>
+                        <li><a href="/ecosysteme-alpha-fle/pages/sites-utiles/">Sites utiles</a></li>
+                        <li><a href="/ecosysteme-alpha-fle/pages/activites-dun-jour.html">Activités d'un jour</a></li>
+                        <li><a href="/ecosysteme-alpha-fle/pages/mallettes-locales/">Mallettes locales</a></li>
+                        <li><a href="/ecosysteme-alpha-fle/pages/parcours-durables.html">Parcours durables</a></li>
+                        <li><a href="/ecosysteme-alpha-fle/pages/evaluer/">Évaluer</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/sinformer.html" class="nav-link">S'informer</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/se-former.html" class="nav-link">Se former</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/notice.html" class="nav-link">Notice</a></li>
             </ul>
         </div>
     </nav>
     <header class="hero">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Alphabétisation — FLE — Illettrisme</h1>
-            <p>Les outils essentiels pour conduire des apprentissages solidaires</p>
+            <h1 class="hero-title">Alphabétisation — FLE — Illettrisme</h1>
+            <p class="hero-subtitle">Les outils essentiels pour conduire des apprentissages solidaires</p>
         </div>
     </header>
-    <main>
-        <h2>Trouvez de l'aide dans les domaines suivants</h2>
-        <div class="card-grid">
-            <article class="card"><img src="assets/images/card-valeurs.jpg" alt=""><a href="pages/agir-suivant-des-valeurs/">Agir suivant des valeurs</a></article>
-            <article class="card"><img src="assets/images/card-groupe.jpg" alt=""><a href="pages/gerer-un-groupe.html">Gérer un groupe d'apprenants</a></article>
-            <article class="card"><img src="assets/images/card-methode.jpg" alt=""><a href="pages/employer-une-methode/">Employer une méthode</a></article>
-            <article class="card"><img src="assets/images/card-evaluer.jpg" alt=""><a href="pages/evaluer/">Évaluer</a></article>
-            <article class="card"><img src="assets/images/card-supports.jpg" alt=""><a href="pages/supports-telechargeables/">Supports téléchargeables</a></article>
-            <article class="card"><img src="assets/images/card-sites.jpg" alt=""><a href="pages/sites-utiles/">Sites utiles</a></article>
-            <article class="card"><img src="assets/images/card-activites.jpg" alt=""><a href="pages/activites-dun-jour.html">Activités d'un jour</a></article>
-            <article class="card"><img src="assets/images/card-parcours.jpg" alt=""><a href="pages/parcours-durables.html">Parcours durables</a></article>
-            <article class="card"><img src="assets/images/card-mallettes.jpg" alt=""><a href="pages/mallettes-locales/">Mallettes locales</a></article>
+    <section class="section section--accent" aria-labelledby="intro-heading">
+        <div class="container">
+            <h2 id="intro-heading" class="section-title">Trouvez de l'aide dans les domaines suivants</h2>
         </div>
-    </main>
-    <footer>
-        <p>Contact : contact@khairdidact.com – +33 7 67 47 04 94</p>
-        <p><a href="pages/notice.html">Notice du site</a></p>
-        <p>&copy; 2024 Fondation Armée du Salut</p>
+    </section>
+    <section class="section" aria-labelledby="domaines-heading">
+        <div class="container">
+            <h2 id="domaines-heading" class="sr-only">Domaines d'aide</h2>
+            <div class="card-grid">
+                <article class="card"><img src="/ecosysteme-alpha-fle/assets/images/card-valeurs.jpg" alt="" class="card-image" loading="lazy"><div class="card-content"><a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/" class="card-link">Agir suivant des valeurs</a></div></article>
+                <article class="card"><img src="/ecosysteme-alpha-fle/assets/images/card-groupe.jpg" alt="" class="card-image" loading="lazy"><div class="card-content"><a href="/ecosysteme-alpha-fle/pages/gerer-un-groupe.html" class="card-link">Gérer un groupe d'apprenants</a></div></article>
+                <article class="card"><img src="/ecosysteme-alpha-fle/assets/images/card-methode.jpg" alt="" class="card-image" loading="lazy"><div class="card-content"><a href="/ecosysteme-alpha-fle/pages/employer-une-methode/" class="card-link">Employer une méthode</a></div></article>
+                <article class="card"><img src="/ecosysteme-alpha-fle/assets/images/card-evaluer.jpg" alt="" class="card-image" loading="lazy"><div class="card-content"><a href="/ecosysteme-alpha-fle/pages/evaluer/" class="card-link">Évaluer</a></div></article>
+                <article class="card"><img src="/ecosysteme-alpha-fle/assets/images/card-supports.jpg" alt="" class="card-image" loading="lazy"><div class="card-content"><a href="/ecosysteme-alpha-fle/pages/supports-telechargeables/" class="card-link">Supports téléchargeables</a></div></article>
+                <article class="card"><img src="/ecosysteme-alpha-fle/assets/images/card-sites.jpg" alt="" class="card-image" loading="lazy"><div class="card-content"><a href="/ecosysteme-alpha-fle/pages/sites-utiles/" class="card-link">Sites utiles</a></div></article>
+                <article class="card"><img src="/ecosysteme-alpha-fle/assets/images/card-activites.jpg" alt="" class="card-image" loading="lazy"><div class="card-content"><a href="/ecosysteme-alpha-fle/pages/activites-dun-jour.html" class="card-link">Activités d'un jour</a></div></article>
+                <article class="card"><img src="/ecosysteme-alpha-fle/assets/images/card-parcours.jpg" alt="" class="card-image" loading="lazy"><div class="card-content"><a href="/ecosysteme-alpha-fle/pages/parcours-durables.html" class="card-link">Parcours durables</a></div></article>
+                <article class="card"><img src="/ecosysteme-alpha-fle/assets/images/card-mallettes.jpg" alt="" class="card-image" loading="lazy"><div class="card-content"><a href="/ecosysteme-alpha-fle/pages/mallettes-locales/" class="card-link">Mallettes locales</a></div></article>
+            </div>
+        </div>
+    </section>
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p>contact@khairdidact.com</p>
+                    <p>+33 7 67 47 04 94</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Liens utiles</h3>
+                    <ul><li><a href="/ecosysteme-alpha-fle/pages/notice.html">Notice du Site</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Communauté</h3>
+                    <a href="https://chat.whatsapp.com/LXLUmZsalqTKz6YKfuaWpG" class="btn btn--whatsapp" target="_blank" rel="noopener">Rejoindre la communauté WhatsApp</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fondation Armée du Salut - Formateurs de Français</p>
+            </div>
+        </div>
     </footer>
+    <script src="/ecosysteme-alpha-fle/assets/js/main.js" defer></script>
 </body>
 </html>
