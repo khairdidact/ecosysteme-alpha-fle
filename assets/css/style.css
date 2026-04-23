@@ -1,0 +1,406 @@
+/* ========================================
+   CHARTE GRAPHIQUE - ARMÉE DU SALUT
+   Couleurs principales :
+   - Magenta foncé : #7F1146
+   - Magenta vif : #C12872
+   - Rouge magenta : #A1004E
+   - Gris foncé : #212121
+   - Gris clair : #F2F2F2
+   - Blanc : #FFFFFF
+   ======================================== */
+
+/* --- RESET & BASE --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 1rem;
+    line-height: 1.6667;
+    color: #212121;
+    background-color: #FFFFFF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'PT Sans', 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    color: #7F1146;
+    line-height: 1.2;
+}
+
+h1 { font-size: 3rem; letter-spacing: -0.5px; }
+h2 { font-size: 2.125rem; letter-spacing: -0.5px; }
+h3 { font-size: 1.1875rem; }
+
+a { color: #A1004E; text-decoration: underline; }
+a:hover, a:focus { color: #C6286D; }
+
+/* --- UTILITAIRES --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* --- NAVIGATION --- */
+.navbar {
+    background-color: #212121;
+    color: #FFFFFF;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem 1.5rem;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.logo-img { height: 40px; width: auto; }
+
+.navbar-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.navbar-subtitle {
+    display: none;
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.7);
+}
+
+.navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger, .hamburger::before, .hamburger::after {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #FFFFFF;
+    transition: transform 0.3s ease;
+}
+
+.hamburger::before, .hamburger::after { content: ''; }
+.hamburger::before { transform: translateY(-6px); }
+.hamburger::after { transform: translateY(6px); }
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.nav-item { position: relative; }
+
+.nav-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #FFFFFF;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover, .nav-link:focus, .nav-item--active > .nav-link {
+    color: #FF4DA3;
+}
+
+.nav-submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #212121;
+    list-style: none;
+    min-width: 250px;
+    padding: 0.5rem 0;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.nav-item:hover > .nav-submenu,
+.nav-item:focus-within > .nav-submenu {
+    display: block;
+}
+
+.nav-submenu a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #CCCCCC;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-submenu a:hover, .nav-submenu a:focus {
+    background-color: rgba(255,77,163,0.1);
+    color: #FF4DA3;
+}
+
+/* --- HERO / HEADER --- */
+.hero {
+    position: relative;
+    height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7F1146;
+    background-image:
+        linear-gradient(rgba(33,33,33,0.4), rgba(33,33,33,0.4)),
+        url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 3.75rem 1.5rem;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+}
+
+.hero-title {
+    color: #FFFFFF;
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    color: #FFFFFF;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.5625rem;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+/* --- SECTIONS --- */
+.section {
+    padding: 4rem 1.5rem;
+}
+
+.section--accent {
+    background-color: #C12872;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.section--accent .section-title {
+    color: #FFFFFF;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.section--light {
+    background-color: #F2F2F2;
+}
+
+.section-title {
+    font-size: 2.125rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+/* --- GRILLE DE CARTES --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.card-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1rem;
+    text-align: center;
+}
+
+.card-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #C12872;
+    color: #FFFFFF;
+    font-family: 'Merriweather', serif;
+    font-size: 0.8125rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.card-link:hover, .card-link:focus {
+    background-color: #7F1146;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/* --- BOUTONS --- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-family: 'PT Sans', sans-serif;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn--whatsapp {
+    background-color: #25D366;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn--whatsapp:hover {
+    background-color: #1da851;
+    color: #FFFFFF;
+}
+
+/* --- FOOTER --- */
+.footer {
+    background-color: #212121;
+    color: #FFFFFF;
+    padding: 3rem 1.5rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer h3 {
+    color: #FFFFFF;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+}
+
+.footer p, .footer li {
+    color: #B2B2B2;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.footer a { color: #FF4DA3; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+.footer ul { list-style: none; padding: 0; }
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+    text-align: center;
+    color: #888888;
+    font-size: 0.8125rem;
+}
+
+/* --- PAGE DE CONTENU --- */
+.page-header {
+    background-color: #7F1146;
+    color: #FFFFFF;
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+
+.page-title {
+    color: #FFFFFF;
+    font-size: 2.5rem;
+}
+
+.breadcrumb {
+    background-color: #F2F2F2;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+}
+
+.breadcrumb a { color: #A1004E; text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+
+.content-section {
+    padding: 3rem 1.5rem;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .navbar-toggle { display: block; }
+    .navbar-menu { display: none; flex-direction: column; width: 100%; background-color: #212121; }
+    .navbar-menu.active { display: flex; }
+    .nav-submenu { position: static; background-color: #2a2a2a; }
+    .hero { height: auto; min-height: 250px; padding: 2rem 1rem; }
+    .hero-title { font-size: 2rem; }
+    .hero-subtitle { font-size: 1.125rem; }
+    .card-grid { grid-template-columns: 1fr; }
+    .navbar-title { font-size: 1rem; }
+}
+
+@media (min-width: 769px) {
+    .navbar-subtitle { display: inline; }
+}
