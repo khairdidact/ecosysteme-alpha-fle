@@ -443,3 +443,27 @@ a:hover, a:focus { color: #C6286D; }
     background-color: #1a1a1a !important; /* Gris très foncé, légèrement plus sombre */
     backdrop-filter: none !important;      /* Supprime tout flou éventuel */
 }
+/* --- Correction opacité sous‑menus Chrome --- */
+.nav-submenu,
+.nav-item:hover .nav-submenu,
+.nav-item:focus-within .nav-submenu,
+.navbar-menu .nav-submenu {
+    opacity: 1 !important;
+    background-color: #1a1a1a !important;  /* fond gris très foncé, opaque */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Supprime toute transition de transparence résiduelle */
+.nav-submenu li,
+.nav-submenu a {
+    background-color: transparent !important;
+    color: #cccccc !important;
+}
+
+/* Survol des liens dans le sous‑menu */
+.nav-submenu a:hover,
+.nav-submenu a:focus {
+    background-color: rgba(255,77,163,0.15) !important;
+    color: #ffffff !important;
+}
