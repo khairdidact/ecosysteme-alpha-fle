@@ -12,13 +12,19 @@
     <link rel="icon" href="/ecosysteme-alpha-fle/assets/images/favicon.ico">
 </head>
 <body>
+    <!-- Navigation principale -->
     <nav class="navbar" role="navigation" aria-label="Navigation principale">
         <div class="navbar-container">
-            <a href="/ecosysteme-alpha-fle/" class="navbar-logo" aria-label="Accueil">
-                <img src="/ecosysteme-alpha-fle/assets/images/logo.png" alt="Logo Armée du Salut" class="logo-img">
-                <span class="navbar-title">Formateurs de Français</span>
-                <span class="navbar-subtitle">Fondation Armée du Salut</span>
-            </a>
+            <!-- Logo + Titre + Lien Fondation -->
+            <div class="navbar-brand">
+                <a href="/ecosysteme-alpha-fle/" class="navbar-logo" aria-label="Accueil">
+                    <img src="/ecosysteme-alpha-fle/assets/images/logo.png" alt="Logo Armée du Salut" class="logo-img">
+                    <span class="navbar-title">Formateurs de Français</span>
+                </a>
+                <a href="https://www.armeedusalut.fr/" target="_blank" rel="noopener" class="navbar-foundation-link">
+                    Fondation Armée du Salut
+                </a>
+            </div>
             <button class="navbar-toggle" aria-label="Menu" aria-expanded="false" id="menu-toggle">
                 <span class="hamburger"></span>
             </button>
@@ -42,23 +48,25 @@
         </div>
     </nav>
 
+    <!-- Bannière principale -->
     <header class="hero">
-        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">Alphabétisation — FLE — Illettrisme</h1>
             <p class="hero-subtitle">Les outils essentiels pour conduire des apprentissages solidaires</p>
         </div>
     </header>
 
-    <section class="section section--accent" aria-labelledby="intro-heading">
+    <!-- Section d'introduction -->
+    <section class="section section--accent">
         <div class="container">
-            <h2 id="intro-heading" class="section-title">Trouvez de l'aide dans les domaines suivants</h2>
+            <h2 class="section-title">Trouvez de l'aide dans les domaines suivants</h2>
         </div>
     </section>
 
-    <section class="section" aria-labelledby="domaines-heading">
+    <!-- Grille de cartes thématiques -->
+    <section class="section">
         <div class="container">
-            <h2 id="domaines-heading" class="sr-only">Domaines d'aide</h2>
+            <h2 class="sr-only">Domaines d'aide</h2>
             <div class="card-grid">
                 <!-- Carte 1 -->
                 <article class="card">
@@ -127,6 +135,7 @@
         </div>
     </section>
 
+    <!-- Pied de page -->
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
@@ -137,12 +146,14 @@
                 </div>
                 <div class="footer-col">
                     <h3>Liens utiles</h3>
-                    <ul><li><a href="/ecosysteme-alpha-fle/pages/notice.html">Notice du Site</a></li></ul>
+                    <ul>
+                        <li><a href="/ecosysteme-alpha-fle/pages/notice.html">Notice du Site</a></li>
+                    </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Communauté</h3>
-                    <a href="https://chat.whatsapp.com/LXLUmZsalqTKz6YKfuaWpG" 
-                       class="btn btn--whatsapp" 
+                    <a href="https://chat.whatsapp.com/LXLUmZsalqTKz6YKfuaWpG"
+                       class="btn btn--whatsapp"
                        target="_blank" rel="noopener"
                        style="color: #FFFFFF;">
                        Rejoindre la communauté WhatsApp

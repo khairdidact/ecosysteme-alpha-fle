@@ -416,3 +416,25 @@ a:hover, a:focus { color: #C6286D; }
         white-space: nowrap;
     }
 }
+/* Lien Fondation dans la navbar */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navbar-foundation-link {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(255,255,255,0.5);
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.navbar-foundation-link:hover,
+.navbar-foundation-link:focus {
+    color: #FF4DA3;
+    border-bottom-color: #FF4DA3;
+}
