@@ -404,3 +404,15 @@ a:hover, a:focus { color: #C6286D; }
 @media (min-width: 769px) {
     .navbar-subtitle { display: inline; }
 }
+/* Empêche le titre principal de passer sur deux lignes */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+        white-space: nowrap;
+    }
+}
+@media (min-width: 769px) {
+    .hero-title {
+        white-space: nowrap;
+    }
+}
