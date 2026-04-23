@@ -1,0 +1,4 @@
+git add .
+git commit -m "Création complète du site"
+git push origin main
+
