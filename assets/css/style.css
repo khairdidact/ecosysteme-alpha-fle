@@ -420,7 +420,7 @@ a:hover, a:focus { color: #C6286D; }
 .navbar-brand {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 3rem;
 }
 
 .navbar-foundation-link {
@@ -437,4 +437,9 @@ a:hover, a:focus { color: #C6286D; }
 .navbar-foundation-link:focus {
     color: #FF4DA3;
     border-bottom-color: #FF4DA3;
+}
+.nav-submenu {
+    opacity: 1 !important;
+    background-color: #1a1a1a !important; /* Gris très foncé, légèrement plus sombre */
+    backdrop-filter: none !important;      /* Supprime tout flou éventuel */
 }
