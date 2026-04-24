@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/ecosysteme-alpha-fle/assets/css/style.css">
-    <link rel="icon" href="/ecosysteme-alpha-fle/assets/images/favicon.ico">
+    <script src="/ecosysteme-alpha-fle/assets/js/main.js" defer></script>
     <style>
-        /* Styles spécifiques à la sous-page Activités (inspirés du design original) */
+        /* Styles spécifiques à la sous-page Activités */
         .activites-hero {
             background: #1a3a5c;
             color: white;
@@ -226,6 +226,7 @@
     </style>
 </head>
 <body>
+    <!-- BARRE DE NAVIGATION (identique charte) -->
     <nav class="navbar" role="navigation" aria-label="Navigation principale">
         <div class="navbar-container">
             <a href="/ecosysteme-alpha-fle/" class="navbar-logo" aria-label="Accueil">
@@ -237,36 +238,37 @@
                 <span class="hamburger"></span>
             </button>
             <ul class="navbar-menu" id="navbar-menu">
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/" class="nav-link">Accueil</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/">Accueil</a></li>
                 <li class="nav-item">
-                    <a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/" class="nav-link">Agir suivant des valeurs</a>
+                    <a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/">Agir suivant des valeurs</a>
                     <ul class="nav-submenu">
                         <li><a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/les-fondamentaux.html">Les fondamentaux</a></li>
                         <li><a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/le-bien-faire.html">Le bien faire</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/gerer-un-groupe.html" class="nav-link">Gérer un groupe</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/employer-une-methode/" class="nav-link">Employer une méthode</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/gerer-un-groupe.html">Gérer un groupe</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/employer-une-methode/">Employer une méthode</a></li>
                 <li class="nav-item nav-item--active">
-                    <a href="/ecosysteme-alpha-fle/pages/supports-telechargeables/" class="nav-link">Supports</a>
+                    <a href="/ecosysteme-alpha-fle/pages/supports-telechargeables/">Supports</a>
                     <ul class="nav-submenu">
                         <li><a href="/ecosysteme-alpha-fle/pages/supports-telechargeables/pictos.html">Pictos</a></li>
                         <li><a href="/ecosysteme-alpha-fle/pages/supports-telechargeables/planches.html">Planches</a></li>
                         <li><a href="/ecosysteme-alpha-fle/pages/supports-telechargeables/activites.html">Activités</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/sites-utiles/" class="nav-link">Sites utiles</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/activites-dun-jour.html" class="nav-link">Activités d'un jour</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/mallettes-locales/" class="nav-link">Mallettes locales</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/parcours-durables.html" class="nav-link">Parcours durables</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/evaluer/" class="nav-link">Évaluer</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/sinformer.html" class="nav-link">S'informer</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/se-former.html" class="nav-link">Se former</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/notice.html" class="nav-link">Notice</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/sites-utiles/">Sites utiles</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/activites-dun-jour.html">Activités d'un jour</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/mallettes-locales/">Mallettes locales</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/parcours-durables.html">Parcours durables</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/evaluer/">Évaluer</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/sinformer.html">S'informer</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/se-former.html">Se former</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/notice.html">Notice</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- BANNIÈRE PAGE -->
     <header class="page-header">
         <div class="container">
             <h1 class="page-title">Activités ludiques à télécharger</h1>
@@ -275,10 +277,10 @@
 
     <main class="content-section">
         <div class="container">
-            <!-- Contenu spécifique de la page (issu de activites.txt) -->
+            <!-- HERO + GUIDES + SITES -->
             <div class="activites-hero">
                 <a class="back-btn" href="../index.html">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/>
                     </svg>
                     Retour aux supports
@@ -289,6 +291,7 @@
             </div>
 
             <div class="activites-section">
+                <!-- Bloc guide -->
                 <div class="guide-block">
                     <h3>Guide de sélection rapide — Quel site pour quel public ?</h3>
                     <div class="guide-item">
@@ -474,6 +477,7 @@
         </div>
     </main>
 
+    <!-- PIED DE PAGE (identique charte) -->
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
@@ -498,7 +502,5 @@
             </div>
         </div>
     </footer>
-
-    <script src="/ecosysteme-alpha-fle/assets/js/main.js" defer></script>
 </body>
 </html>
