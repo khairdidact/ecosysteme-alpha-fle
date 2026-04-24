@@ -155,6 +155,39 @@
             align-items: center;
             gap: 8px;
         }
+
+        /* ========== CORRECTIONS DE CONTRASTE ========== */
+        /* Bouton WhatsApp dans le footer : texte blanc sur fond vert */
+        .btn--whatsapp {
+            color: white !important;
+            background-color: #25D366 !important; /* vert WhatsApp lisible */
+        }
+        .btn--whatsapp:hover {
+            background-color: #128C7E !important;
+        }
+        /* Sécurité : tous les liens dans le footer en blanc pour lisibilité */
+        .footer a {
+            color: rgba(255,255,255,0.9) !important;
+        }
+        .footer a:hover {
+            color: white !important;
+        }
+        /* Liens dans les blocs d'information (vert pâle) : forcer une couleur foncée lisible */
+        .info-block a {
+            color: #085041 !important;
+            text-decoration: underline;
+        }
+        .info-block a:hover {
+            color: #0F6E56 !important;
+        }
+        /* Liens dans les astuces (jaune) : forcer une couleur foncée */
+        .tip-block a {
+            color: #633806 !important;
+            text-decoration: underline;
+        }
+        .tip-block a:hover {
+            color: #8B4A0A !important;
+        }
     </style>
 </head>
 <body>
@@ -198,7 +231,6 @@
     <main class="content-section">
         <div class="hero-ia">
             <div class="hero-tag">S'AIDER DE L'IA</div>
-            <!-- Titre supprimé pour éviter le double emploi avec le page-header -->
             <p>Un outil simple pour séquencer en quelques minutes une séance d'alphabétisation adaptée à votre public du jour — même si vous êtes débutant en pédagogie</p>
         </div>
 
@@ -224,7 +256,7 @@
                 </div>
             </div>
 
-            <!-- Étape 2 : lien vers MaClé Alpha (corrigé) -->
+            <!-- Étape 2 : lien vers MaClé Alpha -->
             <div class="step-card">
                 <div style="color:#e8540a; font-weight:bold; text-transform:uppercase; font-size:11px;">Étape 2</div>
                 <h3 style="color:#1a3a5c; margin:8px 0 12px;">Télécharger la ressource source</h3>
