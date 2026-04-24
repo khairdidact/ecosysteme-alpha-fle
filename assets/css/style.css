@@ -159,7 +159,7 @@ a:hover, a:focus { color: #C6286D; }
 
 /* Sous‑menus totalement opaques */
 .nav-submenu {
-    display: none;
+    display: block;
     position: absolute;
     top: 100%;
     left: 0;
