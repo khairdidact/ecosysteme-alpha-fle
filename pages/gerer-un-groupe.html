@@ -1,498 +1,131 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gérer un groupe d’apprenants – Formateurs de Français</title>
-  <!-- Polices officielles du site -->
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* ---------- RESET & BASE ---------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #fff;
-      font-family: 'Merriweather', serif;
-      color: #212121;
-      line-height: 1.5;
-    }
-
-    .site-wrapper {
-      max-width: 1280px;
-      margin: 0 auto;
-      background: white;
-      box-shadow: 0 0 20px rgba(0,0,0,0.03);
-    }
-
-    /* ---------- TYPOGRAPHIE ---------- */
-    h1, h2, h3, .nav-title, .footer-title {
-      font-family: 'PT Sans', sans-serif;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #7f1146;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      letter-spacing: -0.3px;
-    }
-
-    .section-sub {
-      text-align: center;
-      color: #555;
-      margin-bottom: 2rem;
-      font-size: 1rem;
-    }
-
-    /* ---------- HEADER / NAVIGATION (copie charte) ---------- */
-    .main-header {
-      background: #212121;
-      padding: 0.5rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .site-logo {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: #c12872;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      color: white;
-      font-size: 1.2rem;
-    }
-
-    .site-name {
-      color: white;
-      font-size: 1.2rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    .desktop-nav ul {
-      display: flex;
-      gap: 1.8rem;
-      list-style: none;
-    }
-
-    .desktop-nav a {
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      font-family: 'PT Sans', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    .desktop-nav a:hover,
-    .desktop-nav .active {
-      color: #ff4da3;
-    }
-
-    /* menu mobile simplifié */
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.8rem;
-      cursor: pointer;
-    }
-
-    /* ---------- HERO (en-tête de page avec image) ---------- */
-    .hero-page {
-      background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&auto=format');
-      background-size: cover;
-      background-position: center 30%;
-      position: relative;
-      padding: 80px 24px 60px;
-      text-align: center;
-      color: white;
-    }
-
-    .hero-page::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(33,33,33,0.5);
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-page h1 {
-      font-size: clamp(2.2rem, 6vw, 3.5rem);
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-page p {
-      font-size: 1.2rem;
-      opacity: 0.95;
-    }
-
-    /* ---------- SECTIONS ---------- */
-    .section {
-      padding: 60px 24px;
-      border-bottom: 1px solid #f0f0f0;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    /* vidéo */
-    .video-wrapper {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-      margin: 30px 0;
-    }
-
-    .video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    /* document google drive */
-    .doc-wrapper {
-      position: relative;
-      padding-bottom: 56%;
-      height: 0;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-      margin: 30px 0;
-      background: #f5f5f5;
-    }
-
-    .doc-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    /* double carte images + boutons */
-    .double-cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-      margin: 40px 0 30px;
-    }
-
-    .card-img {
-      flex: 1;
-      min-width: 260px;
-      background: #fafafa;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: transform 0.2s;
-    }
-
-    .card-img img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
-    }
-
-    .button-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin: 30px 0 20px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 28px;
-      border-radius: 40px;
-      font-family: 'Merriweather', serif;
-      font-weight: 700;
-      font-size: 0.95rem;
-      text-decoration: none;
-      transition: all 0.2s;
-      background: white;
-      border: 2px solid #c12872;
-      color: #c12872;
-    }
-
-    .btn-wa {
-      background: #25D366;
-      border: 2px solid #25D366;
-      color: white;
-    }
-
-    .btn-wa:hover {
-      background: #20b859;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(37,211,102,0.3);
-    }
-
-    .btn-outline:hover {
-      background: #c1287210;
-      transform: translateY(-2px);
-    }
-
-    /* pied de page (charte) */
-    .main-footer {
-      background: #1e1e2a;
-      color: #e0e0e0;
-      padding: 40px 24px 24px;
-      font-family: 'PT Sans', sans-serif;
-    }
-
-    .footer-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 40px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .footer-col h4 {
-      color: white;
-      margin-bottom: 16px;
-      font-size: 1.1rem;
-      font-weight: 700;
-    }
-
-    .footer-col p, .footer-col a {
-      color: #ccc;
-      text-decoration: none;
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    .footer-col a:hover {
-      color: #ff4da3;
-    }
-
-    .footer-copyright {
-      text-align: center;
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #333;
-      font-size: 0.8rem;
-      color: #aaa;
-    }
-
-    /* responsive */
-    @media (max-width: 860px) {
-      .desktop-nav {
-        display: none;
-      }
-      .mobile-menu-btn {
-        display: block;
-      }
-      .main-header {
-        flex-wrap: nowrap;
-      }
-      .hero-page {
-        padding: 60px 20px 40px;
-      }
-      .section-title {
-        font-size: 1.8rem;
-      }
-    }
-
-    /* version simple du menu mobile (collapsible) */
-    .mobile-nav {
-      display: none;
-      background: #212121;
-      padding: 1rem;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-    .mobile-nav a {
-      color: white;
-      text-decoration: none;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid #444;
-    }
-    .mobile-nav.show {
-      display: flex;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gérer un groupe d'apprenants - Formateurs FLE Armée du Salut</title>
+    <meta name="description" content="Boîte à outils, méthodes collaboratives, vidéo et documents pour animer un groupe d'apprenants en alphabétisation et FLE.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/ecosysteme-alpha-fle/assets/css/style.css">
+    <link rel="icon" href="/ecosysteme-alpha-fle/assets/images/favicon.ico">
 </head>
 <body>
-<div class="site-wrapper">
-
-  <!-- EN-TÊTE / NAVIGATION (identique charte) -->
-  <header class="main-header">
-    <div class="logo-area">
-      <div class="site-logo">FAS</div>
-      <span class="site-name">Formateurs de Français<br><span style="font-size:0.8rem;">Fondation Armée du Salut</span></span>
-    </div>
-    <nav class="desktop-nav">
-      <ul>
-        <li><a href="accueil.html">Accueil</a></li>
-        <li><a href="agir-suivant-des-valeurs.html">Agir suivant des valeurs</a></li>
-        <li><a href="gerer-un-groupe.html" class="active">Gérer un groupe</a></li>
-        <li><a href="employer-une-methode.html">Employer une méthode</a></li>
-        <li><a href="supports.html">Supports</a></li>
-        <li><a href="sites-utiles.html">Sites utiles</a></li>
-        <li><a href="activites-jour.html">Activités d'un jour</a></li>
-        <li><a href="mallettes-locales.html">Mallettes locales</a></li>
-        <li><a href="parcours-durables.html">Parcours durables</a></li>
-        <li><a href="evaluer.html">Évaluer</a></li>
-        <li><a href="sinformer.html">S'informer</a></li>
-        <li><a href="se-former.html">Se former</a></li>
-        <li><a href="notice.html">Notice</a></li>
-      </ul>
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
+        <div class="navbar-container">
+            <a href="/ecosysteme-alpha-fle/" class="navbar-logo" aria-label="Accueil">
+                <img src="/ecosysteme-alpha-fle/assets/images/logo.png" alt="Logo Armée du Salut" class="logo-img">
+                <span class="navbar-title">Formateurs de Français</span>
+            </a>
+            <a href="https://www.armeedusalut.fr/" target="_blank" rel="noopener" class="navbar-foundation-link">Fondation Armée du Salut</a>
+            <button class="navbar-toggle" aria-label="Menu" aria-expanded="false" id="menu-toggle">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="navbar-menu" id="navbar-menu">
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/" class="nav-link">Accueil</a></li>
+                <li class="nav-item">
+                    <a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/" class="nav-link">Agir suivant des valeurs</a>
+                    <ul class="nav-submenu">
+                        <li><a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/les-fondamentaux.html">Les fondamentaux</a></li>
+                        <li><a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/le-bien-faire.html">Le bien faire</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-item--active"><a href="/ecosysteme-alpha-fle/pages/gerer-un-groupe.html" class="nav-link">Gérer un groupe</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/employer-une-methode/" class="nav-link">Employer une méthode</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/supports-telechargeables/" class="nav-link">Supports</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/sites-utiles/" class="nav-link">Sites utiles</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/activites-dun-jour.html" class="nav-link">Activités d'un jour</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/mallettes-locales/" class="nav-link">Mallettes locales</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/parcours-durables.html" class="nav-link">Parcours durables</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/evaluer/" class="nav-link">Évaluer</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/sinformer.html" class="nav-link">S'informer</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/se-former.html" class="nav-link">Se former</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/notice.html" class="nav-link">Notice</a></li>
+            </ul>
+        </div>
     </nav>
-    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">☰</button>
-  </header>
-  <div class="mobile-nav" id="mobileNav">
-    <a href="accueil.html">Accueil</a>
-    <a href="agir-suivant-des-valeurs.html">Agir suivant des valeurs</a>
-    <a href="gerer-un-groupe.html">Gérer un groupe</a>
-    <a href="employer-une-methode.html">Employer une méthode</a>
-    <a href="supports.html">Supports</a>
-    <a href="sites-utiles.html">Sites utiles</a>
-    <a href="activites-jour.html">Activités d'un jour</a>
-    <a href="mallettes-locales.html">Mallettes locales</a>
-    <a href="parcours-durables.html">Parcours durables</a>
-    <a href="evaluer.html">Évaluer</a>
-    <a href="sinformer.html">S'informer</a>
-    <a href="se-former.html">Se former</a>
-    <a href="notice.html">Notice</a>
-  </div>
 
-  <!-- BANNIÈRE PAGE -->
-  <div class="hero-page">
-    <div class="hero-content">
-      <h1>Gérer un groupe d’apprenants</h1>
-      <p>Boîte à outils, méthodes collaboratives et ressources pour animer vos ateliers alpha-FLE</p>
-    </div>
-  </div>
-
-  <!-- SECTION VIDÉO -->
-  <div class="section">
-    <div class="container">
-      <h2 class="section-title">LA BOÎTE À OUTILS DU FORMATEUR</h2>
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/YkDpw42S89Y" title="La boîte à outils du formateur" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <p class="section-sub">Découvrez des techniques d'animation, des conseils pour gérer l'hétérogénéité et créer une dynamique de groupe.</p>
-    </div>
-  </div>
-
-  <!-- SECTION DOCUMENT PÉDAGOGIQUE -->
-  <div class="section">
-    <div class="container">
-      <h2 class="section-title">Concepts, méthodes & techniques pédagogiques</h2>
-      <div class="doc-wrapper">
-        <iframe src="https://docs.google.com/document/d/11VCooxs85MFVCvKVcDwPme44K9OlkTaA1h-EBFe4Qbw/preview" title="Document pédagogique" allowfullscreen></iframe>
-      </div>
-      <p class="section-sub">Approches andragogiques, outils d'évaluation et fiches pratiques pour la classe.</p>
-    </div>
-  </div>
-
-  <!-- SECTION IMAGES + BOUTONS -->
-  <div class="section">
-    <div class="container">
-      <h2 class="section-title">Ressources & entraide</h2>
-      <div class="double-cards">
-        <div class="card-img">
-          <img src="https://placehold.co/800x500/e8f0fe/7f1146?text=Atelier+de+formation" alt="Illustration atelier pédagogique">
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">Gérer un groupe d'apprenants</h1>
         </div>
-        <div class="card-img">
-          <img src="https://placehold.co/800x500/fce4ec/c12872?text=Communauté+de+formateurs" alt="Visuel communauté formateurs">
+    </header>
+
+    <main class="content-section">
+        <div class="container">
+            <!-- Introduction -->
+            <p style="font-style: italic; text-align: justify;">
+                Animer un groupe d’adultes en alphabétisation ou en FLE demande des outils, des méthodes et une posture adaptée. Cette page vous propose des ressources concrètes pour construire une dynamique de groupe positive et favoriser les apprentissages.
+            </p>
+
+            <!-- Vidéo : La boîte à outils du formateur -->
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                    src="https://www.youtube.com/embed/YkDpw42S89Y"
+                    title="La boîte à outils du formateur"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <!-- Document Google Drive : Concepts, méthodes et techniques -->
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                    src="https://docs.google.com/document/d/11VCooxs85MFVCvKVcDwPme44K9OlkTaA1h-EBFe4Qbw/preview"
+                    title="Concepts, méthodes et techniques pédago-andragogiques"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <h2>Les fondamentaux de l'animation de groupe</h2>
+            <p style="text-align: justify;">
+                Accueillir un groupe hétérogène, gérer les rythmes d’apprentissage, créer une sécurité affective, favoriser l’entraide… Autant de compétences qui se construisent avec des outils éprouvés. La vidéo et le document ci-dessus détaillent des techniques concrètes : pédagogie du projet, activités brise-glace, régulation des tensions, évaluation formative.
+            </p>
+
+            <h2>Échange et communauté</h2>
+            <p style="text-align: justify;">
+                Rejoignez la communauté WhatsApp des formateurs pour partager vos expériences, poser vos questions et bénéficier de l’entraide collective.
+            </p>
+
+            <!-- Bouton WhatsApp (identique charte) -->
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="https://chat.whatsapp.com/LXLUmZsalqTKz6YKfuaWpG" class="btn btn--whatsapp" target="_blank" rel="noopener" style="color: #FFFFFF;">
+                    Rejoindre la communauté WhatsApp
+                </a>
+            </div>
+
+            <hr style="margin: 3rem 0; border: 1px solid rgba(0,0,0,0.15);">
         </div>
-      </div>
-      <div class="button-group">
-        <a href="https://chat.whatsapp.com/LXLUmZsalqTKz6YKfuaWpG" target="_blank" rel="noopener" class="btn btn-wa">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L.057 23.428a.75.75 0 0 0 .916.916l5.583-1.471A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.528-5.222-1.443l-.374-.222-3.878 1.021 1.021-3.878-.222-.374A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
-          </svg>
-          Rejoindre la communauté WhatsApp
-        </a>
-        <a href="notice.html" class="btn btn-outline">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="12" y1="12" x2="12" y2="16"></line>
-            <line x1="12" y1="8" x2="12.01" y2="8"></line>
-          </svg>
-          Notice du Site
-        </a>
-      </div>
-    </div>
-  </div>
+    </main>
 
-  <!-- PIED DE PAGE (charte d'après votre capture) -->
-  <footer class="main-footer">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <p>📧 <a href="mailto:contact@khairdidact.com">contact@khairdidact.com</a></p>
-        <p>📞 +33 7 67 47 04 94</p>
-      </div>
-      <div class="footer-col">
-        <h4>Liens utiles</h4>
-        <p><a href="notice.html">Notice du Site</a></p>
-        <p><a href="accessibilite.html">Accessibilité</a></p>
-      </div>
-      <div class="footer-col">
-        <h4>Communauté</h4>
-        <p><a href="https://chat.whatsapp.com/LXLUmZsalqTKz6YKfuaWpG" target="_blank">📱 Rejoindre la communauté WhatsApp</a></p>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      © 2025 Fondation Armée du Salut – Formateurs de Français. Tous droits réservés.
-    </div>
-  </footer>
-</div>
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p>contact@khairdidact.com</p>
+                    <p>+33 7 67 47 04 94</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Liens utiles</h3>
+                    <ul><li><a href="/ecosysteme-alpha-fle/pages/notice.html">Notice du Site</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Communauté</h3>
+                    <a href="https://chat.whatsapp.com/LXLUmZsalqTKz6YKfuaWpG" class="btn btn--whatsapp" target="_blank" rel="noopener" style="color: #FFFFFF;">
+                        Rejoindre la communauté WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fondation Armée du Salut - Formateurs de Français</p>
+            </div>
+        </div>
+    </footer>
 
-<script>
-  // Menu mobile simple
-  const btn = document.getElementById('mobileMenuBtn');
-  const mobileNav = document.getElementById('mobileNav');
-  if (btn && mobileNav) {
-    btn.addEventListener('click', () => {
-      mobileNav.classList.toggle('show');
-    });
-  }
-</script>
+    <script src="/ecosysteme-alpha-fle/assets/js/main.js" defer></script>
 </body>
 </html>
