@@ -15,7 +15,7 @@
         .activites-hero {
             background: #1a3a5c;
             color: white;
-            padding: 52px 40px;
+            padding: 30px 40px;  /* Hauteur réduite (était 52px) */
             text-align: center;
             margin-bottom: 2rem;
         }
@@ -29,22 +29,16 @@
             text-transform: uppercase;
             padding: 5px 14px;
             border-radius: 99px;
-            margin-bottom: 16px;
+            margin-bottom: 12px;  /* réduit */
             font-family: sans-serif;
         }
-        .activites-hero h1 {
-            font-size: 28px;
-            font-weight: bold;
-            line-height: 1.3;
-            margin-bottom: 10px;
-            font-family: 'PT Sans', sans-serif;
-        }
+        /* Suppression du titre h1 dans cette zone, donc plus besoin de le styler */
         .activites-hero p {
             font-size: 14px;
             opacity: 0.82;
-            max-width: 520px;
+            max-width: 600px;
             margin: 0 auto;
-            line-height: 1.7;
+            line-height: 1.5;
             font-family: sans-serif;
         }
         .back-btn {
@@ -55,7 +49,7 @@
             font-size: 13px;
             font-family: sans-serif;
             text-decoration: none;
-            margin-bottom: 20px;
+            margin-bottom: 16px;  /* réduit */
         }
         .back-btn:hover {
             color: white;
@@ -218,7 +212,7 @@
             height: 12px;
         }
         @media (max-width: 768px) {
-            .activites-hero { padding: 40px 20px; }
+            .activites-hero { padding: 25px 20px; }
             .activites-section { padding: 30px 20px; }
             .tool-row { flex-direction: column; align-items: flex-start; }
             .tool-right { align-self: flex-end; }
@@ -226,7 +220,7 @@
     </style>
 </head>
 <body>
-    <!-- BARRE DE NAVIGATION (identique charte) -->
+    <!-- BARRE DE NAVIGATION -->
     <nav class="navbar" role="navigation" aria-label="Navigation principale">
         <div class="navbar-container">
             <a href="/ecosysteme-alpha-fle/" class="navbar-logo" aria-label="Accueil">
@@ -268,7 +262,7 @@
         </div>
     </nav>
 
-    <!-- BANNIÈRE PAGE -->
+    <!-- EN-TÊTE AVEC TITRE DE PAGE (unique dans le header) -->
     <header class="page-header">
         <div class="container">
             <h1 class="page-title">Activités ludiques à télécharger</h1>
@@ -277,7 +271,7 @@
 
     <main class="content-section">
         <div class="container">
-            <!-- HERO + GUIDES + SITES -->
+            <!-- HERO (chapeau bleu) sans titre et avec phrase sur une ligne -->
             <div class="activites-hero">
                 <a class="back-btn" href="../index.html">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -286,7 +280,7 @@
                     Retour aux supports
                 </a>
                 <div class="activites-hero-tag">Sous-page 3</div>
-                <h1>Activités ludiques à télécharger</h1>
+                <!-- Suppression du titre h1 ici -->
                 <p>10 sites FLE gratuits sélectionnés pour leur qualité et leur adaptation aux publics fragilisés</p>
             </div>
 
@@ -477,7 +471,7 @@
         </div>
     </main>
 
-    <!-- PIED DE PAGE (identique charte) -->
+    <!-- PIED DE PAGE -->
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
