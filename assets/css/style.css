@@ -175,11 +175,11 @@ a:hover, a:focus { color: #C6286D; }
 
 .nav-item:hover > .nav-submenu,
 .nav-item:focus-within > .nav-submenu {
-    display: block;
+    display: flex;
 }
 
 .nav-submenu a {
-    display: block;
+    display: none;
     padding: 0.5rem 1rem;
     color: #CCCCCC;
     font-size: 0.875rem;
