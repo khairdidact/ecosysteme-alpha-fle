@@ -1,89 +1,352 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gérer un groupe d'apprenants - Formateurs FLE Armée du Salut</title>
-    <meta name="description" content="Stratégies et outils pour animer un groupe hétérogène en FLE/alphabétisation.">
-    <link rel="stylesheet" href="/ecosysteme-alpha-fle/assets/css/style.css">
-    <link rel="icon" href="/ecosysteme-alpha-fle/assets/images/favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Gérer un groupe d'apprenants - Écosystème ALPHA FLE</title>
+  <!-- Google Fonts : reprend les mêmes typographies que le site original -->
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fff;
+      font-family: 'Merriweather', serif;
+      color: #212121;
+      line-height: 1.5;
+    }
+
+    /* Conteneur général */
+    .page-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      background: white;
+    }
+
+    /* EN-TÊTE AVEC IMAGE DE FOND (COVER) */
+    .hero-section {
+      background-image: url('https://lh3.googleusercontent.com/sitesv/AA5AbUBkX-i-J2s2sgCBxS6DeoLwyikuuklKfaURHLuJhnFqaPw7SXQjwsDlFMjjXz8yfYV1WVVchsgEhekSOKzNAvWnGaOGmdLL5FBz-n9DVUPqYjT45fALLicu7WfdMIYkNHel3diDz3f8KpgYDv-xBDRd0UWmNrFtEU8SliUVU-ICUWpB8t9XLIzfuYE=w16383');
+      background-size: cover;
+      background-position: center 30%;
+      position: relative;
+      padding: 100px 24px 60px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(33, 33, 33, 0.45);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-family: 'PT Sans', sans-serif;
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .hero-sub {
+      font-size: 1.25rem;
+      opacity: 0.95;
+    }
+
+    /* Sections générales */
+    .section {
+      padding: 60px 24px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .section:last-of-type {
+      border-bottom: none;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Bloc vidéo YouTube */
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* ratio 16/9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      margin: 30px 0;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Bloc document Google Drive */
+    .doc-wrapper {
+      position: relative;
+      padding-bottom: 56%; /* proche du ratio original (42.49% affiché mais on laisse resp) */
+      height: 0;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      margin: 30px 0;
+      background: #f5f5f5;
+    }
+
+    .doc-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Grille images du footer (deux images côte à côte) */
+    .footer-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin: 40px 0 30px;
+    }
+
+    .footer-img-card {
+      flex: 1;
+      min-width: 260px;
+      background: #fafafa;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .footer-img-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Boutons style cohérents */
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 40px 0 20px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 28px;
+      border-radius: 60px;
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      background: white;
+      border: 2px solid #c12872;
+      color: #c12872;
+    }
+
+    .btn-wa {
+      background: #25D366;
+      border: 2px solid #25D366;
+      color: white;
+    }
+
+    .btn-wa:hover {
+      background: #20b859;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(37,211,102,0.3);
+    }
+
+    .btn-outline:hover {
+      background: #c1287210;
+      transform: translateY(-2px);
+    }
+
+    /* Pied de page contact */
+    .contact-bar {
+      text-align: center;
+      padding: 30px 20px 40px;
+      background: #f8f8f8;
+      border-top: 1px solid #eaeaea;
+      font-family: 'PT Sans', sans-serif;
+      font-size: 1.1rem;
+      color: #1e1e2a;
+    }
+
+    .contact-bar a {
+      color: #c12872;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .contact-bar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Titres des sections */
+    .section-title {
+      font-family: 'PT Sans', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #7f1146;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #555;
+      margin-bottom: 2rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 60px 20px 40px;
+      }
+      .section {
+        padding: 40px 20px;
+      }
+      .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+      .footer-images {
+        flex-direction: column;
+        align-items: center;
+      }
+      .footer-img-card {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar" role="navigation" aria-label="Navigation principale">
-        <div class="navbar-container">
-            <a href="/ecosysteme-alpha-fle/" class="navbar-logo" aria-label="Accueil">
-                <img src="/ecosysteme-alpha-fle/assets/images/logo.png" alt="Logo Armée du Salut" class="logo-img">
-                <span class="navbar-title">Formateurs de Français</span>
-                <span class="navbar-subtitle">Fondation Armée du Salut</span>
-            </a>
-            <button class="navbar-toggle" aria-label="Menu" aria-expanded="false" id="menu-toggle">
-                <span class="hamburger"></span>
-            </button>
-            <ul class="navbar-menu" id="navbar-menu">
-                <li class="nav-item">
-                    <a href="/ecosysteme-alpha-fle/" class="nav-link">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/" class="nav-link">Agir suivant des valeurs</a>
-                    <ul class="nav-submenu">
-                        <li><a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/les-fondamentaux.html">Les fondamentaux</a></li>
-                        <li><a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/le-bien-faire.html">Le bien faire</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item nav-item--active"><a href="/ecosysteme-alpha-fle/pages/gerer-un-groupe.html" class="nav-link">Gérer un groupe</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/employer-une-methode/" class="nav-link">Employer une méthode</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/supports-telechargeables/" class="nav-link">Supports</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/sites-utiles/" class="nav-link">Sites utiles</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/activites-dun-jour.html" class="nav-link">Activités d'un jour</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/mallettes-locales/" class="nav-link">Mallettes locales</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/parcours-durables.html" class="nav-link">Parcours durables</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/evaluer/" class="nav-link">Évaluer</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/sinformer.html" class="nav-link">S'informer</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/se-former.html" class="nav-link">Se former</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/notice.html" class="nav-link">Notice</a></li>
-            </ul>
-        </div>
-    </nav>
+<div class="page-container">
 
-    <header class="page-header">
-        <div class="container">
-            <h1 class="page-title">Gérer un groupe d'apprenants</h1>
-        </div>
-    </header>
+  <!-- HERO : en-tête avec l'image de fond + titre (repris du site) -->
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Gérer un groupe d'apprenants</h1>
+      <div class="hero-sub">Boîte à outils, ressources et bonnes pratiques pour l'animation de groupe en alpha‑FLE</div>
+    </div>
+  </div>
 
-    <main class="content-section">
-        <div class="container">
-            <p>Stratégies et outils pour animer un groupe hétérogène en FLE/alphabétisation.</p>
-        </div>
-    </main>
+  <!-- SECTION 1 : VIDÉO YOUTUBE "LA BOÎTE À OUTILS DU FORMATEUR" -->
+  <div class="section">
+    <div class="container">
+      <h2 class="section-title">LA BOÎTE À OUTILS DU FORMATEUR</h2>
+      <div class="video-wrapper">
+        <!-- Vidéo originale extraite du site -->
+        <iframe src="https://www.youtube.com/embed/YkDpw42S89Y" 
+                title="YouTube video player - La boîte à outils du formateur" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+        </iframe>
+      </div>
+      <p class="section-subtitle" style="margin-top: 12px;">Découvrez des méthodes et techniques pour animer efficacement un groupe d'apprenants en alphabétisation.</p>
+    </div>
+  </div>
 
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Contact</h3>
-                    <p>contact@khairdidact.com</p>
-                    <p>+33 7 67 47 04 94</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Liens utiles</h3>
-                    <ul>
-                        <li><a href="/ecosysteme-alpha-fle/pages/notice.html">Notice du Site</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Communauté</h3>
-                    <a href="https://chat.whatsapp.com/LXLUmZsalqTKz6YKfuaWpG" class="btn btn--whatsapp" target="_blank" rel="noopener">
-                        Rejoindre la communauté WhatsApp
-                    </a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Fondation Armée du Salut - Formateurs de Français</p>
-            </div>
-        </div>
-    </footer>
+  <!-- SECTION 2 : DOCUMENT GOOGLE DRIVE "Concepts, Méthodes et Techniques pédago-andragogiques" -->
+  <div class="section">
+    <div class="container">
+      <h2 class="section-title">Concepts, Méthodes & Techniques pédago‑andragogiques</h2>
+      <div class="doc-wrapper">
+        <!-- Document Google Drive : public avec autorisation d'aperçu -->
+        <iframe src="https://docs.google.com/document/d/11VCooxs85MFVCvKVcDwPme44K9OlkTaA1h-EBFe4Qbw/preview?authuser=0" 
+                title="Document Google - Concepts pédagogiques" 
+                allowfullscreen>
+        </iframe>
+      </div>
+      <p class="section-subtitle">Guide complet pour structurer vos séances, adapter votre posture et favoriser les apprentissages.</p>
+    </div>
+  </div>
 
-    <script src="/ecosysteme-alpha-fle/assets/js/main.js" defer></script>
+  <!-- SECTION 3 : DOUBLE IMAGE (ILLUSTRATIONS) + BOUTONS COMMUNAUTÉ / NOTICE -->
+  <div class="section" style="background: #ffffff;">
+    <div class="container">
+      <h2 class="section-title">Ressources & communauté</h2>
+      <div class="footer-images">
+        <!-- Première image (logo / visuel ALPHA) -->
+        <div class="footer-img-card">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUBPGK3R748loYOAlUJ89HYT4y0NSy1_paHKDHrOMBILDKvoo4ylsEhpFBDqM0Ym1FT0F4riAATtxiS0q8o1GU4Q4ttBA4lUpNGbgm7neLbGHw2VNfqsRdluaneP8kiFCpCIDUShB5izVb6qidtwq9XD-h2LiJQEzxroszsXgnPn6qrbn9HJplDSzEVQDrnt-eePsmDvn-za1dtbxxv5TLS_Hggqq9M54O1xgDM=w1280" 
+               alt="Illustration soutien pédagogique" loading="lazy">
+        </div>
+        <!-- Deuxième image -->
+        <div class="footer-img-card">
+          <img src="https://lh3.googleusercontent.com/sitesv/AA5AbUDscLCxeu62IHnTF4iKqk1c-gfAM1wqMLMmlLoHR8-9RS-kGuVShwVXEhTDYFktyN8wr3OAREkIIZEn-lu9s9PrbHeU2dyYTqCg0aGo1cmIs81138VF9QCOnORzjrBDSt8sJi8OxgwBE4uRrn87ylkHHXEykpcmWv-f1UDE8gBunnsiJG6yeeB8JDKf5Mx56JdUzlyET42qPxKzqZDYq5oni4Ly7CbKC8AnI28=w1280" 
+               alt="Visuel communauté formateurs" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Boutons : WhatsApp & Notice (exactement comme dans le site d'origine) -->
+      <div class="button-group">
+        <a href="https://chat.whatsapp.com/LXLUmZsalqTKz6YKfuaWpG" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn btn-wa">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L.057 23.428a.75.75 0 0 0 .916.916l5.583-1.471A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.528-5.222-1.443l-.374-.222-3.878 1.021 1.021-3.878-.222-.374A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+          </svg>
+          Rejoindre la communauté WhatsApp
+        </a>
+        <a href="notice.html" class="btn btn-outline">
+          <!-- icône info simplifiée -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="12" x2="12" y2="16"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          Notice du Site
+        </a>
+      </div>
+      <p class="section-subtitle" style="font-size: 0.9rem; color: #5f5f6b;">Échangez avec d'autres formateurs et accédez aux informations légales.</p>
+    </div>
+  </div>
+
+  <!-- PIED DE PAGE : CONTACT -->
+  <div class="contact-bar">
+    <p>📧 <a href="mailto:contact@khairdidact.com">contact@khairdidact.com</a> &nbsp;|&nbsp; 📞 +33 7 67 47 04 94</p>
+    <p style="margin-top: 12px; font-size: 0.8rem;">© Écosystème ALPHA FLE – Formateurs de Français de la Fondation Armée du Salut</p>
+  </div>
+
+</div>
 </body>
 </html>
