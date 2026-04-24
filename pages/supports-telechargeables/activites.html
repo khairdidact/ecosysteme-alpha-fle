@@ -3,10 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activités - Formateurs FLE Armée du Salut</title>
-    <meta name="description" content="Fiches d'activités prêtes à l'emploi, classées par niveau et compétence.">
+    <title>Activités ludiques à télécharger - Formateurs FLE Armée du Salut</title>
+    <meta name="description" content="10 sites FLE gratuits sélectionnés pour leur qualité et leur adaptation aux publics fragilisés. Guide de sélection, jeux, vidéos, escape games.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/ecosysteme-alpha-fle/assets/css/style.css">
     <link rel="icon" href="/ecosysteme-alpha-fle/assets/images/favicon.ico">
+    <style>
+        /* Styles spécifiques à la sous-page Activités (inspirés du design original) */
+        .activites-hero {
+            background: #1a3a5c;
+            color: white;
+            padding: 52px 40px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .activites-hero-tag {
+            display: inline-block;
+            background: #e8540a;
+            color: white;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 99px;
+            margin-bottom: 16px;
+            font-family: sans-serif;
+        }
+        .activites-hero h1 {
+            font-size: 28px;
+            font-weight: bold;
+            line-height: 1.3;
+            margin-bottom: 10px;
+            font-family: 'PT Sans', sans-serif;
+        }
+        .activites-hero p {
+            font-size: 14px;
+            opacity: 0.82;
+            max-width: 520px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-family: sans-serif;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.7);
+            font-size: 13px;
+            font-family: sans-serif;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+        .back-btn:hover {
+            color: white;
+        }
+        .activites-section {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 40px 32px;
+        }
+        .activites-section-tag {
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #e8540a;
+            font-family: sans-serif;
+            margin-bottom: 8px;
+        }
+        .activites-section-title {
+            font-size: 20px;
+            color: #1a3a5c;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .activites-section-intro {
+            font-size: 14px;
+            color: #6b6b67;
+            font-family: sans-serif;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-bottom: 24px;
+        }
+        .guide-block {
+            background: #1a3a5c;
+            border-radius: 14px;
+            padding: 28px;
+            margin-bottom: 32px;
+        }
+        .guide-block h3 {
+            font-size: 15px;
+            color: #FAC775;
+            font-family: sans-serif;
+            margin-bottom: 16px;
+            font-weight: bold;
+        }
+        .guide-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .guide-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .guide-pub {
+            background: #e8540a;
+            color: white;
+            font-size: 11px;
+            font-weight: bold;
+            font-family: sans-serif;
+            padding: 3px 10px;
+            border-radius: 99px;
+            white-space: nowrap;
+            height: fit-content;
+            margin-top: 2px;
+        }
+        .guide-text {
+            font-size: 13px;
+            color: rgba(255,255,255,0.85);
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+        .guide-text strong {
+            color: white;
+        }
+        .tools-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .tool-row {
+            background: white;
+            border: 1px solid #d1cdc4;
+            border-radius: 12px;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .tool-left {
+            flex: 1;
+            min-width: 200px;
+        }
+        .tool-cat {
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #6b6b67;
+            font-family: sans-serif;
+            margin-bottom: 4px;
+        }
+        .tool-name {
+            font-size: 14px;
+            font-weight: bold;
+            color: #1a3a5c;
+            font-family: sans-serif;
+            margin-bottom: 3px;
+        }
+        .tool-desc {
+            font-size: 12px;
+            color: #6b6b67;
+            font-family: sans-serif;
+            line-height: 1.5;
+        }
+        .tool-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+        .level-badge {
+            font-size: 11px;
+            font-weight: bold;
+            font-family: sans-serif;
+            padding: 3px 9px;
+            border-radius: 99px;
+            white-space: nowrap;
+        }
+        .l-alpha { background: #fee2e2; color: #991b1b; }
+        .l-a1 { background: #fef3c7; color: #92400e; }
+        .l-a2 { background: #dcfce7; color: #166534; }
+        .l-b { background: #dbeafe; color: #1e40af; }
+        .l-all { background: #f3f4f6; color: #374151; }
+        .btn-sm {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: #1a3a5c;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 7px;
+            font-size: 12px;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: sans-serif;
+            transition: background 0.15s;
+            white-space: nowrap;
+        }
+        .btn-sm:hover {
+            background: #e8540a;
+            color: white;
+        }
+        .btn-sm svg {
+            width: 12px;
+            height: 12px;
+        }
+        @media (max-width: 768px) {
+            .activites-hero { padding: 40px 20px; }
+            .activites-section { padding: 30px 20px; }
+            .tool-row { flex-direction: column; align-items: flex-start; }
+            .tool-right { align-self: flex-end; }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar" role="navigation" aria-label="Navigation principale">
@@ -14,15 +231,13 @@
             <a href="/ecosysteme-alpha-fle/" class="navbar-logo" aria-label="Accueil">
                 <img src="/ecosysteme-alpha-fle/assets/images/logo.png" alt="Logo Armée du Salut" class="logo-img">
                 <span class="navbar-title">Formateurs de Français</span>
-                <span class="navbar-subtitle">Fondation Armée du Salut</span>
             </a>
+            <a href="https://www.armeedusalut.fr/" target="_blank" rel="noopener" class="navbar-foundation-link">Fondation Armée du Salut</a>
             <button class="navbar-toggle" aria-label="Menu" aria-expanded="false" id="menu-toggle">
                 <span class="hamburger"></span>
             </button>
             <ul class="navbar-menu" id="navbar-menu">
-                <li class="nav-item">
-                    <a href="/ecosysteme-alpha-fle/" class="nav-link">Accueil</a>
-                </li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/" class="nav-link">Accueil</a></li>
                 <li class="nav-item">
                     <a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/" class="nav-link">Agir suivant des valeurs</a>
                     <ul class="nav-submenu">
@@ -54,13 +269,208 @@
 
     <header class="page-header">
         <div class="container">
-            <h1 class="page-title">Activités</h1>
+            <h1 class="page-title">Activités ludiques à télécharger</h1>
         </div>
     </header>
 
     <main class="content-section">
         <div class="container">
-            <p>Fiches d'activités prêtes à l'emploi, classées par niveau et compétence.</p>
+            <!-- Contenu spécifique de la page (issu de activites.txt) -->
+            <div class="activites-hero">
+                <a class="back-btn" href="../index.html">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/>
+                    </svg>
+                    Retour aux supports
+                </a>
+                <div class="activites-hero-tag">Sous-page 3</div>
+                <h1>Activités ludiques à télécharger</h1>
+                <p>10 sites FLE gratuits sélectionnés pour leur qualité et leur adaptation aux publics fragilisés</p>
+            </div>
+
+            <div class="activites-section">
+                <div class="guide-block">
+                    <h3>Guide de sélection rapide — Quel site pour quel public ?</h3>
+                    <div class="guide-item">
+                        <span class="guide-pub">Alpha / A1.1</span>
+                        <div class="guide-text"><strong>Exercices à imprimer</strong> et <strong>Mondolinguo</strong> — Le support visuel y est prédominant, ce qui rassure les apprenants qui n'ont pas encore les bases de lecture.</div>
+                    </div>
+                    <div class="guide-item">
+                        <span class="guide-pub">B1 / B2</span>
+                        <div class="guide-text"><strong>Les Zexperts</strong> ou <strong>Instant FLE</strong> — Le support (jeu ou vidéo) sert de prétexte pour débattre et argumenter.</div>
+                    </div>
+                    <div class="guide-item">
+                        <span class="guide-pub">Grammaire</span>
+                        <div class="guide-text"><strong>Polyglottes.org</strong> ou <strong>Cap sur le FLE</strong> — Manipuler les structures sans passer par l'exercice à trous classique.</div>
+                    </div>
+                </div>
+
+                <div class="activites-section-tag">10 ressources gratuites</div>
+                <div class="activites-section-title">Les sites sélectionnés</div>
+                <p class="activites-section-intro">Classés par catégorie pédagogique. Cliquez sur le bouton pour accéder directement au site.</p>
+
+                <div class="tools-grid">
+                    <!-- TV5MONDE Enseigner -->
+                    <div class="tool-row">
+                        <div class="tool-left">
+                            <div class="tool-cat">Institutionnel · Actualité</div>
+                            <div class="tool-name">TV5MONDE Enseigner</div>
+                            <div class="tool-desc">Vidéos authentiques, fiches de compréhension et dossiers d'actualité.</div>
+                        </div>
+                        <div class="tool-right">
+                            <span class="level-badge l-a1">A1.1 → B2+</span>
+                            <a class="btn-sm" href="https://enseigner.tv5monde.com/" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Accéder
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Les Zexperts FLE -->
+                    <div class="tool-row">
+                        <div class="tool-left">
+                            <div class="tool-cat">Créativité · Jeux</div>
+                            <div class="tool-name">Les Zexperts FLE</div>
+                            <div class="tool-desc">Matériel moderne, jeux de société à imprimer, brise-glace originaux.</div>
+                        </div>
+                        <div class="tool-right">
+                            <span class="level-badge l-a1">A1 → B2</span>
+                            <a class="btn-sm" href="https://leszexpertsfle.com/" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Accéder
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Les Fées du FLE -->
+                    <div class="tool-row">
+                        <div class="tool-left">
+                            <div class="tool-cat">Escape games</div>
+                            <div class="tool-name">Les Fées du FLE</div>
+                            <div class="tool-desc">Missions ludiques en ligne ou hybrides (énigmes, enquêtes).</div>
+                        </div>
+                        <div class="tool-right">
+                            <span class="level-badge l-a2">A2 → B2</span>
+                            <a class="btn-sm" href="https://www.lesfeesdufle.com/" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Accéder
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ISLCollective -->
+                    <div class="tool-row">
+                        <div class="tool-left">
+                            <div class="tool-cat">Collaboratif</div>
+                            <div class="tool-name">ISLCollective</div>
+                            <div class="tool-desc">Immense base de PDF créés par des profs (PowerPoints, jeux, fiches).</div>
+                        </div>
+                        <div class="tool-right">
+                            <span class="level-badge l-all">Tous niveaux</span>
+                            <a class="btn-sm" href="https://fr.islcollective.com/" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Accéder
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Exercices à imprimer (recommandé Alpha) -->
+                    <div class="tool-row" style="border: 2px solid #e8540a;">
+                        <div class="tool-left">
+                            <div class="tool-cat" style="color:#e8540a;">★ Recommandé Alpha / A1.1 · Vie pratique</div>
+                            <div class="tool-name">Exercices à imprimer</div>
+                            <div class="tool-desc">Très visuel : formulaires, panneaux, tickets, idéal pour l'autonomie.</div>
+                        </div>
+                        <div class="tool-right">
+                            <span class="level-badge l-alpha">A1.1 → A2</span>
+                            <a class="btn-sm" style="background:#e8540a;" href="https://www.exercices-a-imprimer.com/fle/" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Accéder
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Le Plaisir d'Apprendre -->
+                    <div class="tool-row">
+                        <div class="tool-left">
+                            <div class="tool-cat">Audio · Chanson</div>
+                            <div class="tool-name">Le Plaisir d'Apprendre</div>
+                            <div class="tool-desc">Fiches pédagogiques basées sur la culture et la musique française.</div>
+                        </div>
+                        <div class="tool-right">
+                            <span class="level-badge l-a1">A1 → B2</span>
+                            <a class="btn-sm" href="https://www.leplaisirdapprendre.com/" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Accéder
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Instant FLE -->
+                    <div class="tool-row">
+                        <div class="tool-left">
+                            <div class="tool-cat">Cinéma court</div>
+                            <div class="tool-name">Instant FLE</div>
+                            <div class="tool-desc">Exploitation de courts-métrages pour déclencher la parole.</div>
+                        </div>
+                        <div class="tool-right">
+                            <span class="level-badge l-a2">A2 → B2</span>
+                            <a class="btn-sm" href="https://instantfle.fr/" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Accéder
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Polyglottes.org -->
+                    <div class="tool-row">
+                        <div class="tool-left">
+                            <div class="tool-cat">Grammaire ludique</div>
+                            <div class="tool-name">Polyglottes.org</div>
+                            <div class="tool-desc">Jeux de cartes et dés pour pratiquer la conjugaison sans s'ennuyer.</div>
+                        </div>
+                        <div class="tool-right">
+                            <span class="level-badge l-a2">A2 → B1</span>
+                            <a class="btn-sm" href="https://polyglottes.org/" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Accéder
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Mondolinguo (recommandé Alpha) -->
+                    <div class="tool-row" style="border: 2px solid #e8540a;">
+                        <div class="tool-left">
+                            <div class="tool-cat" style="color:#e8540a;">★ Recommandé Alpha / A1.1 · Vocabulaire visuel</div>
+                            <div class="tool-name">Mondolinguo</div>
+                            <div class="tool-desc">Flashcards esthétiques et jeux de rôle (marché, docteur, météo).</div>
+                        </div>
+                        <div class="tool-right">
+                            <span class="level-badge l-alpha">A1.1 → B1</span>
+                            <a class="btn-sm" style="background:#e8540a;" href="https://fle.mondolinguo.com/" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Accéder
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Le Point du FLE -->
+                    <div class="tool-row">
+                        <div class="tool-left">
+                            <div class="tool-cat">Répertoire global</div>
+                            <div class="tool-name">Le Point du FLE</div>
+                            <div class="tool-desc">L'annuaire le plus complet pour trouver des simulations globales et ressources FLE.</div>
+                        </div>
+                        <div class="tool-right">
+                            <span class="level-badge l-all">Tous niveaux</span>
+                            <a class="btn-sm" href="https://www.lepointdufle.net/" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Accéder
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -74,13 +484,11 @@
                 </div>
                 <div class="footer-col">
                     <h3>Liens utiles</h3>
-                    <ul>
-                        <li><a href="/ecosysteme-alpha-fle/pages/notice.html">Notice du Site</a></li>
-                    </ul>
+                    <ul><li><a href="/ecosysteme-alpha-fle/pages/notice.html">Notice du Site</a></li></ul>
                 </div>
                 <div class="footer-col">
                     <h3>Communauté</h3>
-                    <a href="https://chat.whatsapp.com/LXLUmZsalqTKz6YKfuaWpG" class="btn btn--whatsapp" target="_blank" rel="noopener">
+                    <a href="https://chat.whatsapp.com/LXLUmZsalqTKz6YKfuaWpG" class="btn btn--whatsapp" target="_blank" rel="noopener" style="color: #FFFFFF;">
                         Rejoindre la communauté WhatsApp
                     </a>
                 </div>
