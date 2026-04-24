@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activités ludiques à télécharger - Formateurs FLE Armée du Salut</title>
-    <meta name="description" content="10 sites FLE gratuits sélectionnés pour leur qualité et leur adaptation aux publics fragilisés. Guide de sélection, jeux, vidéos, escape games.">
+    <title>Activités ludiques - Formateurs FLE Armée du Salut</title>
+    <meta name="description" content="10 sites FLE gratuits classés par catégorie et niveau : jeux, vidéos, escape games, fiches pédagogiques. Guide de sélection pour publics Alpha à B2.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/ecosysteme-alpha-fle/assets/css/style.css">
-    <script src="/ecosysteme-alpha-fle/assets/js/main.js" defer></script>
+    <link rel="icon" href="/ecosysteme-alpha-fle/assets/images/favicon.ico">
     <style>
-        /* Styles spécifiques à la sous-page Activités */
-        .activites-hero {
+        /* Styles identiques aux autres sous-pages */
+        .supports-hero {
             background: #1a3a5c;
             color: white;
-            padding: 30px 40px;  /* Hauteur réduite (était 52px) */
+            padding: 40px 32px;
             text-align: center;
             margin-bottom: 2rem;
         }
-        .activites-hero-tag {
+        .supports-hero-tag {
             display: inline-block;
             background: #e8540a;
             color: white;
@@ -29,198 +29,123 @@
             text-transform: uppercase;
             padding: 5px 14px;
             border-radius: 99px;
-            margin-bottom: 12px;  /* réduit */
+            margin-bottom: 16px;
             font-family: sans-serif;
         }
-        /* Suppression du titre h1 dans cette zone, donc plus besoin de le styler */
-        .activites-hero p {
-            font-size: 14px;
+        .supports-hero p {
+            font-size: 15px;
             opacity: 0.82;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
-            line-height: 1.5;
+            line-height: 1.7;
             font-family: sans-serif;
         }
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: rgba(255,255,255,0.7);
-            font-size: 13px;
-            font-family: sans-serif;
-            text-decoration: none;
-            margin-bottom: 16px;  /* réduit */
-        }
-        .back-btn:hover {
-            color: white;
-        }
-        .activites-section {
-            max-width: 760px;
+        .supports-section {
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 40px 32px;
+            padding: 44px 32px;
         }
-        .activites-section-tag {
+        .supports-section-tag {
             font-size: 11px;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: #e8540a;
             font-family: sans-serif;
-            margin-bottom: 8px;
+            margin-bottom: 20px;
+            text-align: center;
         }
-        .activites-section-title {
-            font-size: 20px;
-            color: #1a3a5c;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-        .activites-section-intro {
-            font-size: 14px;
-            color: #6b6b67;
-            font-family: sans-serif;
-            line-height: 1.6;
-            max-width: 600px;
-            margin-bottom: 24px;
-        }
-        .guide-block {
-            background: #1a3a5c;
-            border-radius: 14px;
-            padding: 28px;
-            margin-bottom: 32px;
-        }
-        .guide-block h3 {
-            font-size: 15px;
-            color: #FAC775;
-            font-family: sans-serif;
-            margin-bottom: 16px;
-            font-weight: bold;
-        }
-        .guide-item {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 14px;
-            padding-bottom: 14px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .guide-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        .guide-pub {
-            background: #e8540a;
-            color: white;
-            font-size: 11px;
-            font-weight: bold;
-            font-family: sans-serif;
-            padding: 3px 10px;
-            border-radius: 99px;
-            white-space: nowrap;
-            height: fit-content;
-            margin-top: 2px;
-        }
-        .guide-text {
-            font-size: 13px;
-            color: rgba(255,255,255,0.85);
-            font-family: sans-serif;
-            line-height: 1.6;
-        }
-        .guide-text strong {
-            color: white;
-        }
-        .tools-grid {
+        .card-list {
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 28px;
         }
-        .tool-row {
+        .resource-card {
             background: white;
             border: 1px solid #d1cdc4;
-            border-radius: 12px;
-            padding: 18px 20px;
+            border-radius: 16px;
+            padding: 28px 32px;
             display: flex;
-            align-items: center;
-            gap: 16px;
+            gap: 28px;
+            align-items: flex-start;
             flex-wrap: wrap;
         }
-        .tool-left {
-            flex: 1;
-            min-width: 200px;
-        }
-        .tool-cat {
-            font-size: 10px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #6b6b67;
-            font-family: sans-serif;
-            margin-bottom: 4px;
-        }
-        .tool-name {
-            font-size: 14px;
-            font-weight: bold;
-            color: #1a3a5c;
-            font-family: sans-serif;
-            margin-bottom: 3px;
-        }
-        .tool-desc {
-            font-size: 12px;
-            color: #6b6b67;
-            font-family: sans-serif;
-            line-height: 1.5;
-        }
-        .tool-right {
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
             flex-shrink: 0;
-        }
-        .level-badge {
-            font-size: 11px;
             font-weight: bold;
+            font-size: 20px;
             font-family: sans-serif;
-            padding: 3px 9px;
-            border-radius: 99px;
-            white-space: nowrap;
+            background: #FAEEDA;
+            color: #633806;
         }
-        .l-alpha { background: #fee2e2; color: #991b1b; }
-        .l-a1 { background: #fef3c7; color: #92400e; }
-        .l-a2 { background: #dcfce7; color: #166534; }
-        .l-b { background: #dbeafe; color: #1e40af; }
-        .l-all { background: #f3f4f6; color: #374151; }
-        .btn-sm {
+        .card-content { flex: 1; min-width: 220px; }
+        .card-title { font-size: 18px; font-weight: bold; color: #1a3a5c; margin-bottom: 6px; }
+        .card-tag { display: inline-block; font-size: 11px; font-weight: bold; padding: 4px 10px; border-radius: 99px; font-family: sans-serif; margin-bottom: 12px; background: #f0f0f0; color: #1a3a5c; }
+        .card-desc { font-size: 14px; color: #6b6b67; line-height: 1.6; margin-bottom: 20px; }
+        .btn-primary {
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
             background: #1a3a5c;
             color: white;
-            padding: 8px 14px;
-            border-radius: 7px;
-            font-size: 12px;
+            padding: 10px 20px;
+            border-radius: 9px;
+            font-size: 13px;
             font-weight: bold;
             text-decoration: none;
             font-family: sans-serif;
             transition: background 0.15s;
-            white-space: nowrap;
         }
-        .btn-sm:hover {
+        .btn-primary:hover { background: #e8540a; color: white; }
+        .btn-primary svg { width: 16px; height: 16px; }
+        .advice-box {
+            background: #f8f6f2;
+            border-left: 4px solid #e8540a;
+            padding: 20px 28px;
+            margin: 28px 0;
+            border-radius: 0 12px 12px 0;
+        }
+        .advice-box p { margin: 0; font-size: 14px; color: #1c1c1a; line-height: 1.6; }
+        .supports-quote {
             background: #e8540a;
-            color: white;
+            padding: 44px 32px;
+            text-align: center;
+            margin: 2rem 0;
         }
-        .btn-sm svg {
-            width: 12px;
-            height: 12px;
+        .supports-quote blockquote {
+            font-size: 17px;
+            font-style: italic;
+            color: white;
+            max-width: 660px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .supports-quote cite {
+            display: block;
+            font-size: 12px;
+            color: rgba(255,255,255,0.75);
+            font-style: normal;
+            font-family: sans-serif;
+            margin-top: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
         @media (max-width: 768px) {
-            .activites-hero { padding: 25px 20px; }
-            .activites-section { padding: 30px 20px; }
-            .tool-row { flex-direction: column; align-items: flex-start; }
-            .tool-right { align-self: flex-end; }
+            .supports-hero { padding: 30px 20px; }
+            .supports-section { padding: 30px 20px; }
+            .resource-card { padding: 20px; flex-direction: column; align-items: center; text-align: center; }
+            .btn-primary { justify-content: center; }
         }
     </style>
 </head>
 <body>
-    <!-- BARRE DE NAVIGATION -->
+    <!-- ========== BARRE DE NAVIGATION IDENTIQUE À CELLE DE PICTOS.HTML ET PLANCHES.HTML ========== -->
     <nav class="navbar" role="navigation" aria-label="Navigation principale">
         <div class="navbar-container">
             <a href="/ecosysteme-alpha-fle/" class="navbar-logo" aria-label="Accueil">
@@ -232,37 +157,36 @@
                 <span class="hamburger"></span>
             </button>
             <ul class="navbar-menu" id="navbar-menu">
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/">Accueil</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/" class="nav-link">Accueil</a></li>
                 <li class="nav-item">
-                    <a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/">Agir suivant des valeurs</a>
+                    <a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/" class="nav-link">Agir suivant des valeurs</a>
                     <ul class="nav-submenu">
                         <li><a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/les-fondamentaux.html">Les fondamentaux</a></li>
                         <li><a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/le-bien-faire.html">Le bien faire</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/gerer-un-groupe.html">Gérer un groupe</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/employer-une-methode/">Employer une méthode</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/gerer-un-groupe.html" class="nav-link">Gérer un groupe</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/employer-une-methode/" class="nav-link">Employer une méthode</a></li>
                 <li class="nav-item nav-item--active">
-                    <a href="/ecosysteme-alpha-fle/pages/supports-telechargeables/">Supports</a>
+                    <a href="/ecosysteme-alpha-fle/pages/supports-telechargeables/" class="nav-link">Supports</a>
                     <ul class="nav-submenu">
                         <li><a href="/ecosysteme-alpha-fle/pages/supports-telechargeables/pictos.html">Pictos</a></li>
                         <li><a href="/ecosysteme-alpha-fle/pages/supports-telechargeables/planches.html">Planches</a></li>
                         <li><a href="/ecosysteme-alpha-fle/pages/supports-telechargeables/activites.html">Activités</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/sites-utiles/">Sites utiles</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/activites-dun-jour.html">Activités d'un jour</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/mallettes-locales/">Mallettes locales</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/parcours-durables.html">Parcours durables</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/evaluer/">Évaluer</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/sinformer.html">S'informer</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/se-former.html">Se former</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/notice.html">Notice</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/sites-utiles/" class="nav-link">Sites utiles</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/activites-dun-jour.html" class="nav-link">Activités d'un jour</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/mallettes-locales/" class="nav-link">Mallettes locales</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/parcours-durables.html" class="nav-link">Parcours durables</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/evaluer/" class="nav-link">Évaluer</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/sinformer.html" class="nav-link">S'informer</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/se-former.html" class="nav-link">Se former</a></li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/notice.html" class="nav-link">Notice</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- EN-TÊTE AVEC TITRE DE PAGE (unique dans le header) -->
     <header class="page-header">
         <div class="container">
             <h1 class="page-title">Activités ludiques à télécharger</h1>
@@ -271,207 +195,173 @@
 
     <main class="content-section">
         <div class="container">
-            <!-- HERO (chapeau bleu) sans titre et avec phrase sur une ligne -->
-            <div class="activites-hero">
-                <a class="back-btn" href="../index.html">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/>
-                    </svg>
-                    Retour aux supports
-                </a>
-                <div class="activites-hero-tag">Sous-page 3</div>
-                <!-- Suppression du titre h1 ici -->
-                <p>10 sites FLE gratuits sélectionnés pour leur qualité et leur adaptation aux publics fragilisés</p>
+            <!-- Bandeau bleu -->
+            <div class="supports-hero">
+                <div class="supports-hero-tag">Sous-page 3</div>
+                <p>10 sites FLE gratuits classés par catégorie et niveau — jeux, vidéos, escape games, fiches pédagogiques</p>
             </div>
 
-            <div class="activites-section">
-                <!-- Bloc guide -->
-                <div class="guide-block">
-                    <h3>Guide de sélection rapide — Quel site pour quel public ?</h3>
-                    <div class="guide-item">
-                        <span class="guide-pub">Alpha / A1.1</span>
-                        <div class="guide-text"><strong>Exercices à imprimer</strong> et <strong>Mondolinguo</strong> — Le support visuel y est prédominant, ce qui rassure les apprenants qui n'ont pas encore les bases de lecture.</div>
+            <!-- Section des 10 sites -->
+            <div class="supports-section">
+                <div class="supports-section-tag">10 sites ressources</div>
+                <div class="card-list">
+
+                    <!-- Site 1 : TV5MONDE -->
+                    <div class="resource-card">
+                        <div class="card-icon">TV5</div>
+                        <div class="card-content">
+                            <div class="card-title">TV5MONDE — Apprendre le français</div>
+                            <span class="card-tag">Vidéos & exercices</span>
+                            <p class="card-desc">Des centaines de vidéos authentiques avec transcriptions et exercices interactifs. Niveaux A1 à B2. Idéal pour travailler la compréhension orale en contexte.</p>
+                            <a class="btn-primary" href="https://apprendre.tv5monde.com/fr" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Accéder à TV5MONDE
+                            </a>
+                        </div>
                     </div>
-                    <div class="guide-item">
-                        <span class="guide-pub">B1 / B2</span>
-                        <div class="guide-text"><strong>Les Zexperts</strong> ou <strong>Instant FLE</strong> — Le support (jeu ou vidéo) sert de prétexte pour débattre et argumenter.</div>
+
+                    <!-- Site 2 : Le Point du FLE -->
+                    <div class="resource-card">
+                        <div class="card-icon">PDF</div>
+                        <div class="card-content">
+                            <div class="card-title">Le Point du FLE — Fiches pédagogiques</div>
+                            <span class="card-tag">Banque de fiches</span>
+                            <p class="card-desc">Plus de 10 000 fiches classées par niveau, compétence et thème. Exercices, jeux, activités de compréhension orale/écrite. Idéal pour préparer des séances.</p>
+                            <a class="btn-primary" href="https://www.lepointdufle.net/p/fiches.htm" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Explorer les fiches
+                            </a>
+                        </div>
                     </div>
-                    <div class="guide-item">
-                        <span class="guide-pub">Grammaire</span>
-                        <div class="guide-text"><strong>Polyglottes.org</strong> ou <strong>Cap sur le FLE</strong> — Manipuler les structures sans passer par l'exercice à trous classique.</div>
+
+                    <!-- Site 3 : Bonjour de France -->
+                    <div class="resource-card">
+                        <div class="card-icon">BDF</div>
+                        <div class="card-content">
+                            <div class="card-title">Bonjour de France — Exercices interactifs</div>
+                            <span class="card-tag">Grammaire & vocabulaire</span>
+                            <p class="card-desc">Des centaines d’exercices autocorrectifs, de la découverte à la révision. Parfait pour l’autonomie en classe ou à la maison.</p>
+                            <a class="btn-primary" href="https://www.bonjourdefrance.com/" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Aller sur Bonjour de France
+                            </a>
+                        </div>
                     </div>
+
+                    <!-- Site 4 : Podcast français facile -->
+                    <div class="resource-card">
+                        <div class="card-icon">PFC</div>
+                        <div class="card-content">
+                            <div class="card-title">Podcast français facile — Dialogues & exercices</div>
+                            <span class="card-tag">Audio & compréhension</span>
+                            <p class="card-desc">Dialogues de la vie quotidienne lus à deux vitesses, avec transcriptions et exercices. Idéal pour le niveau A1/A2.</p>
+                            <a class="btn-primary" href="https://www.podcastfrancaisfacile.com/" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Écouter les podcasts
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Site 5 : Français avec Pierre -->
+                    <div class="resource-card">
+                        <div class="card-icon">FAP</div>
+                        <div class="card-content">
+                            <div class="card-title">Français avec Pierre — Cours & exercices</div>
+                            <span class="card-tag">Vidéos pédagogiques</span>
+                            <p class="card-desc">Vidéos claires et progressives, fiches d’exercices. Excellente ressource pour les apprenants débutants et intermédiaires.</p>
+                            <a class="btn-primary" href="https://www.francaisavecpierre.com/" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Découvrir la chaîne
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Site 6 : Ortholud -->
+                    <div class="resource-card">
+                        <div class="card-icon">OL</div>
+                        <div class="card-content">
+                            <div class="card-title">Ortholud — Jeux éducatifs</div>
+                            <span class="card-tag">Jeux & exercices</span>
+                            <p class="card-desc">Des centaines de jeux pour travailler le vocabulaire, la grammaire, l’orthographe. Interface ludique adaptée aux adultes débutants.</p>
+                            <a class="btn-primary" href="https://www.ortholud.com/" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Jouer sur Ortholud
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Site 7 : Lingolia -->
+                    <div class="resource-card">
+                        <div class="card-icon">LIN</div>
+                        <div class="card-content">
+                            <div class="card-title">Lingolia — Grammaire & exercices</div>
+                            <span class="card-tag">Grammaire expliquée</span>
+                            <p class="card-desc">Explications claires, tableaux de conjugaison, exercices interactifs. Très utile pour la remédiation et l’auto-apprentissage.</p>
+                            <a class="btn-primary" href="https://francais.lingolia.com/fr/" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Consulter Lingolia
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Site 8 : ISL Collective -->
+                    <div class="resource-card">
+                        <div class="card-icon">ISL</div>
+                        <div class="card-content">
+                            <div class="card-title">ISL Collective — Fiches imprimables</div>
+                            <span class="card-tag">Banque collaborative</span>
+                            <p class="card-desc">Milliers de fiches pédagogiques créées par des enseignants (PDF). Idéal pour les activités en présentiel ou à photocopier.</p>
+                            <a class="btn-primary" href="https://fr.islcollective.com/" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Télécharger des fiches
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Site 9 : Lumni Enseignement -->
+                    <div class="resource-card">
+                        <div class="card-icon">LUM</div>
+                        <div class="card-content">
+                            <div class="card-title">Lumni Enseignement — Vidéos & séquences</div>
+                            <span class="card-tag">Médias éducatifs</span>
+                            <p class="card-desc">Vidéos courtes, séquences pédagogiques prêtes à l’emploi. Thèmes variés (société, culture, sciences). Niveaux A2 à B2.</p>
+                            <a class="btn-primary" href="https://enseignants.lumni.fr/" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Explorer Lumni
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Site 10 : Teaching French (University of Texas) -->
+                    <div class="resource-card">
+                        <div class="card-icon">UTX</div>
+                        <div class="card-content">
+                            <div class="card-title">Français interactif — University of Texas</div>
+                            <span class="card-tag">Cours interactif</span>
+                            <p class="card-desc">Cours complet en ligne avec vidéos, exercices, transcriptions. Idéal pour une approche structurée et autonome.</p>
+                            <a class="btn-primary" href="https://www.laits.utexas.edu/fi/" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Accéder au cours
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="activites-section-tag">10 ressources gratuites</div>
-                <div class="activites-section-title">Les sites sélectionnés</div>
-                <p class="activites-section-intro">Classés par catégorie pédagogique. Cliquez sur le bouton pour accéder directement au site.</p>
-
-                <div class="tools-grid">
-                    <!-- TV5MONDE Enseigner -->
-                    <div class="tool-row">
-                        <div class="tool-left">
-                            <div class="tool-cat">Institutionnel · Actualité</div>
-                            <div class="tool-name">TV5MONDE Enseigner</div>
-                            <div class="tool-desc">Vidéos authentiques, fiches de compréhension et dossiers d'actualité.</div>
-                        </div>
-                        <div class="tool-right">
-                            <span class="level-badge l-a1">A1.1 → B2+</span>
-                            <a class="btn-sm" href="https://enseigner.tv5monde.com/" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                Accéder
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Les Zexperts FLE -->
-                    <div class="tool-row">
-                        <div class="tool-left">
-                            <div class="tool-cat">Créativité · Jeux</div>
-                            <div class="tool-name">Les Zexperts FLE</div>
-                            <div class="tool-desc">Matériel moderne, jeux de société à imprimer, brise-glace originaux.</div>
-                        </div>
-                        <div class="tool-right">
-                            <span class="level-badge l-a1">A1 → B2</span>
-                            <a class="btn-sm" href="https://leszexpertsfle.com/" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                Accéder
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Les Fées du FLE -->
-                    <div class="tool-row">
-                        <div class="tool-left">
-                            <div class="tool-cat">Escape games</div>
-                            <div class="tool-name">Les Fées du FLE</div>
-                            <div class="tool-desc">Missions ludiques en ligne ou hybrides (énigmes, enquêtes).</div>
-                        </div>
-                        <div class="tool-right">
-                            <span class="level-badge l-a2">A2 → B2</span>
-                            <a class="btn-sm" href="https://www.lesfeesdufle.com/" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                Accéder
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- ISLCollective -->
-                    <div class="tool-row">
-                        <div class="tool-left">
-                            <div class="tool-cat">Collaboratif</div>
-                            <div class="tool-name">ISLCollective</div>
-                            <div class="tool-desc">Immense base de PDF créés par des profs (PowerPoints, jeux, fiches).</div>
-                        </div>
-                        <div class="tool-right">
-                            <span class="level-badge l-all">Tous niveaux</span>
-                            <a class="btn-sm" href="https://fr.islcollective.com/" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                Accéder
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Exercices à imprimer (recommandé Alpha) -->
-                    <div class="tool-row" style="border: 2px solid #e8540a;">
-                        <div class="tool-left">
-                            <div class="tool-cat" style="color:#e8540a;">★ Recommandé Alpha / A1.1 · Vie pratique</div>
-                            <div class="tool-name">Exercices à imprimer</div>
-                            <div class="tool-desc">Très visuel : formulaires, panneaux, tickets, idéal pour l'autonomie.</div>
-                        </div>
-                        <div class="tool-right">
-                            <span class="level-badge l-alpha">A1.1 → A2</span>
-                            <a class="btn-sm" style="background:#e8540a;" href="https://www.exercices-a-imprimer.com/fle/" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                Accéder
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Le Plaisir d'Apprendre -->
-                    <div class="tool-row">
-                        <div class="tool-left">
-                            <div class="tool-cat">Audio · Chanson</div>
-                            <div class="tool-name">Le Plaisir d'Apprendre</div>
-                            <div class="tool-desc">Fiches pédagogiques basées sur la culture et la musique française.</div>
-                        </div>
-                        <div class="tool-right">
-                            <span class="level-badge l-a1">A1 → B2</span>
-                            <a class="btn-sm" href="https://www.leplaisirdapprendre.com/" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                Accéder
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Instant FLE -->
-                    <div class="tool-row">
-                        <div class="tool-left">
-                            <div class="tool-cat">Cinéma court</div>
-                            <div class="tool-name">Instant FLE</div>
-                            <div class="tool-desc">Exploitation de courts-métrages pour déclencher la parole.</div>
-                        </div>
-                        <div class="tool-right">
-                            <span class="level-badge l-a2">A2 → B2</span>
-                            <a class="btn-sm" href="https://instantfle.fr/" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                Accéder
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Polyglottes.org -->
-                    <div class="tool-row">
-                        <div class="tool-left">
-                            <div class="tool-cat">Grammaire ludique</div>
-                            <div class="tool-name">Polyglottes.org</div>
-                            <div class="tool-desc">Jeux de cartes et dés pour pratiquer la conjugaison sans s'ennuyer.</div>
-                        </div>
-                        <div class="tool-right">
-                            <span class="level-badge l-a2">A2 → B1</span>
-                            <a class="btn-sm" href="https://polyglottes.org/" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                Accéder
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Mondolinguo (recommandé Alpha) -->
-                    <div class="tool-row" style="border: 2px solid #e8540a;">
-                        <div class="tool-left">
-                            <div class="tool-cat" style="color:#e8540a;">★ Recommandé Alpha / A1.1 · Vocabulaire visuel</div>
-                            <div class="tool-name">Mondolinguo</div>
-                            <div class="tool-desc">Flashcards esthétiques et jeux de rôle (marché, docteur, météo).</div>
-                        </div>
-                        <div class="tool-right">
-                            <span class="level-badge l-alpha">A1.1 → B1</span>
-                            <a class="btn-sm" style="background:#e8540a;" href="https://fle.mondolinguo.com/" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                Accéder
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Le Point du FLE -->
-                    <div class="tool-row">
-                        <div class="tool-left">
-                            <div class="tool-cat">Répertoire global</div>
-                            <div class="tool-name">Le Point du FLE</div>
-                            <div class="tool-desc">L'annuaire le plus complet pour trouver des simulations globales et ressources FLE.</div>
-                        </div>
-                        <div class="tool-right">
-                            <span class="level-badge l-all">Tous niveaux</span>
-                            <a class="btn-sm" href="https://www.lepointdufle.net/" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                Accéder
-                            </a>
-                        </div>
-                    </div>
+                <!-- Conseil d'utilisation -->
+                <div class="advice-box">
+                    <p><strong>Conseil d’utilisation :</strong> Pour les publics Alpha / A1.1, privilégiez les sites avec des consignes visuelles ou des vidéos (TV5MONDE, Podcast français facile). Pour les niveaux plus avancés, orientez-vous vers les fiches ISL Collective ou Lumni. Pensez à télécharger les ressources avant la séance si l’accès internet est limité.</p>
                 </div>
+            </div>
+
+            <!-- Citation orange -->
+            <div class="supports-quote">
+                <blockquote>« Le bon support, c'est celui qui disparaît derrière la relation. Il donne confiance, puis s'efface. »</blockquote>
+                <cite>Approche actionnelle — Fondation de l'Armée du Salut</cite>
             </div>
         </div>
     </main>
 
-    <!-- PIED DE PAGE -->
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
@@ -496,5 +386,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="/ecosysteme-alpha-fle/assets/js/main.js" defer></script>
 </body>
 </html>
