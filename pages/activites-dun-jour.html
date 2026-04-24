@@ -1,89 +1,233 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activités d'un jour - Formateurs FLE Armée du Salut</title>
-    <meta name="description" content="Des séquences clés en main pour une journée de formation.">
-    <link rel="stylesheet" href="/ecosysteme-alpha-fle/assets/css/style.css">
-    <link rel="icon" href="/ecosysteme-alpha-fle/assets/images/favicon.ico">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Activit&eacute;s d'un jour &mdash; Alpha-FLE avec l'IA</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; background: #f4f1eb; color: #1c1c1a; }
+.hero { background: #1a3a5c; color: white; padding: 56px 40px; text-align: center; }
+.hero-tag { display: inline-block; background: #e8540a; color: white; font-size: 11px; font-weight: bold; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 14px; border-radius: 99px; margin-bottom: 16px; font-family: sans-serif; }
+.hero h1 { font-size: 28px; font-weight: bold; line-height: 1.3; margin-bottom: 12px; }
+.hero p { font-size: 15px; opacity: 0.82; max-width: 580px; margin: 0 auto; line-height: 1.7; font-family: sans-serif; }
+.section { max-width: 780px; margin: 0 auto; padding: 44px 32px; }
+.section-tag { font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; color: #e8540a; font-family: sans-serif; margin-bottom: 8px; }
+.section-title { font-size: 20px; color: #1a3a5c; font-weight: bold; margin-bottom: 10px; }
+.intro-block { background: white; border: 1px solid #d1cdc4; border-radius: 14px; padding: 24px 28px; margin-bottom: 36px; }
+.intro-block p { font-size: 14px; color: #444441; font-family: sans-serif; line-height: 1.8; margin-bottom: 12px; }
+.intro-block p:last-child { margin-bottom: 0; }
+.intro-block strong { color: #1a3a5c; }
+.steps { display: flex; flex-direction: column; gap: 0; }
+.step-block { display: flex; gap: 0; }
+.step-line { display: flex; flex-direction: column; align-items: center; width: 56px; flex-shrink: 0; }
+.step-num { width: 44px; height: 44px; background: #1a3a5c; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold; font-family: sans-serif; flex-shrink: 0; z-index: 1; }
+.step-connector { width: 2px; background: #d1cdc4; flex: 1; min-height: 24px; }
+.step-block:last-child .step-connector { display: none; }
+.step-content { flex: 1; padding: 0 0 36px 20px; }
+.step-tag { font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; color: #e8540a; font-family: sans-serif; margin-bottom: 6px; margin-top: 10px; }
+.step-title { font-size: 18px; font-weight: bold; color: #1a3a5c; margin-bottom: 12px; font-family: sans-serif; }
+.step-card { background: white; border: 1px solid #d1cdc4; border-radius: 14px; padding: 22px 24px; }
+.step-card p { font-size: 13px; color: #444441; font-family: sans-serif; line-height: 1.7; margin-bottom: 14px; }
+.step-card p:last-child { margin-bottom: 0; }
+.step-card strong { color: #1a3a5c; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: #1a3a5c; color: white; padding: 11px 20px; border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; font-family: sans-serif; transition: background 0.15s; }
+.btn-primary:hover { background: #e8540a; }
+.btn-primary svg { width: 15px; height: 15px; flex-shrink: 0; }
+.btn-orange { background: #e8540a; }
+.btn-orange:hover { background: #c9430a; }
+.btn-green { background: #085041; }
+.btn-green:hover { background: #0F6E56; }
+.btn-group { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+.tip-block { background: #fff8e8; border-left: 4px solid #e8540a; border-radius: 0 8px 8px 0; padding: 12px 16px; font-family: sans-serif; font-size: 13px; color: #633806; line-height: 1.6; margin-top: 14px; }
+.tip-block strong { color: #1a3a5c; display: block; margin-bottom: 3px; }
+.info-block { background: #E1F5EE; border: 1px solid #9FE1CB; border-radius: 10px; padding: 14px 18px; font-family: sans-serif; font-size: 13px; color: #085041; line-height: 1.6; margin-top: 14px; display: flex; gap: 10px; align-items: flex-start; }
+.info-block svg { width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px; }
+.prompt-box { background: #1a3a5c; border-radius: 12px; padding: 24px; margin-top: 16px; }
+.prompt-box pre { font-family: monospace; font-size: 12px; color: rgba(255,255,255,0.88); line-height: 1.7; white-space: pre-wrap; word-break: break-word; }
+.prompt-label { font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; color: #FAC775; font-family: sans-serif; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.prompt-label svg { width: 14px; height: 14px; }
+.copy-btn { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 7px 14px; border-radius: 6px; font-size: 12px; font-weight: bold; cursor: pointer; font-family: sans-serif; margin-top: 14px; transition: background 0.15s; }
+.copy-btn:hover { background: rgba(255,255,255,0.2); }
+.copy-btn svg { width: 13px; height: 13px; }
+.copy-ok { background: rgba(22,163,74,0.3) !important; }
+.plan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 16px; }
+.plan-item { background: #f4f1eb; border-radius: 8px; padding: 12px 14px; }
+.plan-time { font-size: 20px; font-weight: bold; color: #e8540a; font-family: sans-serif; line-height: 1; }
+.plan-phase { font-size: 12px; font-weight: bold; color: #1a3a5c; font-family: sans-serif; margin: 4px 0 3px; }
+.plan-detail { font-size: 11px; color: #6b6b67; font-family: sans-serif; line-height: 1.4; }
+.final-block { background: #e8540a; border-radius: 14px; padding: 28px 32px; text-align: center; margin-bottom: 0; }
+.final-block h3 { font-size: 18px; font-weight: bold; color: white; margin-bottom: 8px; }
+.final-block p { font-size: 13px; color: rgba(255,255,255,0.85); font-family: sans-serif; line-height: 1.6; margin-bottom: 20px; }
+.btn-white { display: inline-flex; align-items: center; gap: 8px; background: white; color: #e8540a; padding: 12px 22px; border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; font-family: sans-serif; transition: opacity 0.15s; }
+.btn-white:hover { opacity: 0.9; }
+.btn-white svg { width: 14px; height: 14px; }
+</style>
 </head>
 <body>
-    <nav class="navbar" role="navigation" aria-label="Navigation principale">
-        <div class="navbar-container">
-            <a href="/ecosysteme-alpha-fle/" class="navbar-logo" aria-label="Accueil">
-                <img src="/ecosysteme-alpha-fle/assets/images/logo.png" alt="Logo Armée du Salut" class="logo-img">
-                <span class="navbar-title">Formateurs de Français</span>
-                <span class="navbar-subtitle">Fondation Armée du Salut</span>
+
+<div class="hero">
+  <div class="hero-tag">S'AIDER DE L'IA</div>
+  <h1>Activités d'un jour</h1>
+  <p>Un outil simple pour s&eacute;quencer en quelques minutes une s&eacute;ance d'alphab&eacute;tisation adapt&eacute;e &agrave; votre public du jour &mdash; m&ecirc;me si vous &ecirc;tes d&eacute;butant en p&eacute;dagogie</p>
+</div>
+
+<div class="section">
+  <div class="intro-block">
+    <p>Former au fran&ccedil;ais dans un accueil de jour demande une <strong>flexibilit&eacute; extr&ecirc;me</strong> : le public est volatil, les niveaux sont h&eacute;t&eacute;rog&egrave;nes, et la progression p&eacute;dagogique classique est souvent rompue par les al&eacute;as du quotidien.</p>
+    <p>Cette proc&eacute;dure vous permet de g&eacute;n&eacute;rer en quelques minutes un <strong>s&eacute;quen&ccedil;age de s&eacute;ance complet et adapt&eacute;</strong> gr&acirc;ce &agrave; l'intelligence artificielle Claude. Suivez simplement les 3 &eacute;tapes ci-dessous.</p>
+  </div>
+
+  <div class="section-tag">Marche &agrave; suivre</div>
+  <div class="section-title" style="margin-bottom:28px;">3 &eacute;tapes pour g&eacute;n&eacute;rer votre s&eacute;quence</div>
+
+  <div class="steps">
+
+    <div class="step-block">
+      <div class="step-line"><div class="step-num">1</div><div class="step-connector"></div></div>
+      <div class="step-content">
+        <div class="step-tag">&Eacute;tape 1</div>
+        <div class="step-title">Cr&eacute;er un compte Claude</div>
+        <div class="step-card">
+          <p>Claude est l'assistant IA que nous recommandons pour cet outil. Il est <strong>gratuit pour commencer</strong> &mdash; vous pouvez g&eacute;n&eacute;rer plusieurs s&eacute;quences par jour sans abonnement. Cr&eacute;ez simplement un compte avec votre adresse e-mail.</p>
+          <p>Une fois connect&eacute;, vous arrivez sur une interface de discussion simple : une zone de texte o&ugrave; vous &eacute;crirez votre prompt. C'est tout ce dont vous avez besoin.</p>
+          <div class="btn-group">
+            <a class="btn-primary btn-orange" href="https://claude.ai/login" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Cr&eacute;er un compte Claude gratuit
             </a>
-            <button class="navbar-toggle" aria-label="Menu" aria-expanded="false" id="menu-toggle">
-                <span class="hamburger"></span>
+            <a class="btn-primary" href="https://claude.ai" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Acc&eacute;der &agrave; Claude
+            </a>
+          </div>
+          <div class="tip-block">
+            <strong>Version gratuite ou payante ?</strong>
+            La version gratuite (Claude.ai) est suffisante pour g&eacute;n&eacute;rer 3 &agrave; 5 s&eacute;quences par jour. Si vous l'utilisez quotidiennement ou souhaitez des r&eacute;ponses plus longues et d&eacute;taill&eacute;es, la version Pro (20$/mois) peut valoir l'investissement. Commencez par la version gratuite.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-block">
+      <div class="step-line"><div class="step-num">2</div><div class="step-connector"></div></div>
+      <div class="step-content">
+        <div class="step-tag">&Eacute;tape 2</div>
+        <div class="step-title">T&eacute;l&eacute;charger la ressource source</div>
+        <div class="step-card">
+          <p>Avant d'&eacute;crire votre prompt, t&eacute;l&eacute;chargez sur votre appareil l'unit&eacute; MaCl&eacute; ALPHA correspondant &agrave; votre s&eacute;ance du jour. Ce fichier PDF sera joint directement dans Claude pour que l'IA s'appuie sur son contenu.</p>
+          <p><strong>Nommez le fichier clairement</strong> avant de le t&eacute;l&eacute;charger &mdash; par exemple&nbsp;: <code style="background:#f4f1eb;padding:2px 6px;border-radius:4px;font-size:12px;">Unit&eacute;_n01_MaClé_Alpha_A1.1.pdf</code></p>
+          <div class="info-block">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#085041" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span>Les ressources MaCl&eacute; ALPHA sont t&eacute;l&eacute;chargeables gratuitement sur <strong>scolibris.fr</strong> (guide formateur, fiches unit&eacute;s, exercices). Connectez-vous et cherchez &laquo;&nbsp;MaCl&eacute; ALPHA&nbsp;&raquo;.</span>
+          </div>
+          <div class="btn-group">
+            <a class="btn-primary btn-green" href="https://scolibris.fr" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              T&eacute;l&eacute;charger sur ScoLibris (gratuit)
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-block">
+      <div class="step-line"><div class="step-num">3</div><div class="step-connector"></div></div>
+      <div class="step-content">
+        <div class="step-tag">&Eacute;tape 3</div>
+        <div class="step-title">Copier-coller le prompt et compl&eacute;ter le formulaire</div>
+        <div class="step-card">
+          <p>Dans Claude, commencez par <strong>joindre le fichier PDF</strong> de votre unit&eacute; (ic&ocirc;ne trombone), puis copiez-collez le prompt ci-dessous dans la zone de texte. Compl&eacute;tez les champs entre crochets avec les informations de votre s&eacute;ance.</p>
+          <p>Claude g&eacute;n&egrave;re ensuite en quelques secondes un <strong>s&eacute;quen&ccedil;age complet de 2 heures</strong> incluant accueil, activit&eacute;s diff&eacute;renci&eacute;es, trace &eacute;crite et collation.</p>
+          <div class="prompt-box">
+            <div class="prompt-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#FAC775" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              Prompt &agrave; copier-coller dans Claude
+            </div>
+            <pre id="prompt-text">À partir de la ressource fournie et des données suivantes :
+
+Contexte de la séance
+Date : [Écrire la date JJ/MM/AAAA]
+Support source : [Ex: Unité n°01 Ma Clé Alpha Adultes A1.1]
+Thématique du jour : [Ex: LIRE, Écrire | Mes urgences]
+
+Objectifs du jour :
+[Ex: J'identifie mes besoins et mes priorités
+      Mes urgences en lecture et écriture]
+
+Effectif prévu : [Ex: 8 à 12 personnes]
+Niveaux présents : [Ex: Majorité d'infra-alpha (ne lisent pas dans leur langue), quelques lecteurs débutants]
+Public : [Ex: Femmes seules avec enfants en bas âge / Hommes isolés]
+Contrainte matérielle : [Ex: Pas de vidéoprojecteur, uniquement des photocopies et un tableau blanc]
+
+---
+
+Agis en tant qu'expert en ingénierie pédagogique spécialisé dans l'alphabétisation des adultes en situation de grande précarité (FLE/Alpha).
+
+Je dois animer une séance de 2 heures se terminant par une collation collective de 15 minutes. Mon public est volatil (accueil de jour), je dois donc proposer une séance "décloisonnée" : quelqu'un qui arrive en cours de route doit pouvoir s'intégrer, et celui qui ne vient qu'une fois doit repartir avec un outil concret.
+
+Propose-moi un séquençage détaillé incluant :
+
+1. Accueil et brise-glace (15 min) : Une activité orale simple pour souder le groupe hétérogène.
+2. Phase de découverte (25 min) : Utilisation du support visuel (ex: les personnages Nina, Ali, Zafran) pour identifier les besoins.
+3. Atelier pratique "Méthode Active" (40 min) : Une activité kinesthésique ou un jeu de rôle adapté aux différents niveaux (ex: tri de documents réels, simulation d'un guichet).
+4. Trace écrite / Production (25 min) : Une tâche différenciée (dessin/recopie de mots-clés pour les alpha, phrases simples pour les plus avancés).
+5. Conclusion et collation (15 min) : Comment ritualiser ce moment pour en faire un espace de pratique de la "langue de socialisation" (politesse, goûts, partage).
+
+Consignes spécifiques :
+- Privilégie l'oralité et les visuels.
+- Donne-moi des conseils sur la gestion des enfants si des familles monoparentales sont présentes.
+- Assure-toi que les objectifs soient "utilitaristes" (survie administrative / quotidienne).</pre>
+            <button class="copy-btn" id="copy-btn" onclick="copyPrompt()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copier le prompt
             </button>
-            <ul class="navbar-menu" id="navbar-menu">
-                <li class="nav-item">
-                    <a href="/ecosysteme-alpha-fle/" class="nav-link">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/" class="nav-link">Agir suivant des valeurs</a>
-                    <ul class="nav-submenu">
-                        <li><a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/les-fondamentaux.html">Les fondamentaux</a></li>
-                        <li><a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/le-bien-faire.html">Le bien faire</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/gerer-un-groupe.html" class="nav-link">Gérer un groupe</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/employer-une-methode/" class="nav-link">Employer une méthode</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/supports-telechargeables/" class="nav-link">Supports</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/sites-utiles/" class="nav-link">Sites utiles</a></li>
-                <li class="nav-item nav-item--active"><a href="/ecosysteme-alpha-fle/pages/activites-dun-jour.html" class="nav-link">Activités d'un jour</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/mallettes-locales/" class="nav-link">Mallettes locales</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/parcours-durables.html" class="nav-link">Parcours durables</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/evaluer/" class="nav-link">Évaluer</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/sinformer.html" class="nav-link">S'informer</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/se-former.html" class="nav-link">Se former</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/notice.html" class="nav-link">Notice</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <header class="page-header">
-        <div class="container">
-            <h1 class="page-title">Activités d'un jour</h1>
-        </div>
-    </header>
-
-    <main class="content-section">
-        <div class="container">
-            <p>Des séquences clés en main pour une journée de formation.</p>
-        </div>
-    </main>
-
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Contact</h3>
-                    <p>contact@khairdidact.com</p>
-                    <p>+33 7 67 47 04 94</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Liens utiles</h3>
-                    <ul>
-                        <li><a href="/ecosysteme-alpha-fle/pages/notice.html">Notice du Site</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Communauté</h3>
-                    <a href="https://chat.whatsapp.com/LXLUmZsalqTKz6YKfuaWpG" class="btn btn--whatsapp" target="_blank" rel="noopener">
-                        Rejoindre la communauté WhatsApp
-                    </a>
-                </div>
+          </div>
+          <div class="tip-block">
+            <strong>Comment joindre le PDF dans Claude ?</strong>
+            Sur ordinateur&nbsp;: cliquez sur l'ic&ocirc;ne trombone (&#128206;) &agrave; gauche de la zone de texte, s&eacute;lectionnez votre fichier PDF, puis collez le prompt et envoyez. Sur mobile&nbsp;: appuyez sur le &laquo;&nbsp;+&nbsp;&raquo; ou le trombone selon votre appareil.
+          </div>
+          <div style="margin-top:18px;">
+            <div class="section-tag" style="margin-bottom:10px;">Ce que Claude va produire</div>
+            <div class="plan-grid">
+              <div class="plan-item"><div class="plan-time">15'</div><div class="plan-phase">Accueil &amp; brise-glace</div><div class="plan-detail">Activit&eacute; orale pour cr&eacute;er la dynamique de groupe</div></div>
+              <div class="plan-item"><div class="plan-time">25'</div><div class="plan-phase">D&eacute;couverte</div><div class="plan-detail">Support visuel, personnages, identification des besoins</div></div>
+              <div class="plan-item"><div class="plan-time">40'</div><div class="plan-phase">Atelier pratique</div><div class="plan-detail">Activit&eacute; kineth&eacute;sique ou jeu de r&ocirc;le diff&eacute;renci&eacute;</div></div>
+              <div class="plan-item"><div class="plan-time">25'</div><div class="plan-phase">Trace &eacute;crite</div><div class="plan-detail">Production diff&eacute;renci&eacute;e selon le niveau</div></div>
+              <div class="plan-item"><div class="plan-time">15'</div><div class="plan-phase">Collation</div><div class="plan-detail">Ritualisation et langue de socialisation</div></div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Fondation Armée du Salut - Formateurs de Français</p>
-            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
 
-    <script src="/ecosysteme-alpha-fle/assets/js/main.js" defer></script>
+  </div>
+
+  <div class="final-block">
+    <h3>Pr&ecirc;t &agrave; commencer&nbsp;?</h3>
+    <p>Ouvrez Claude, joignez votre unit&eacute; MaCl&eacute; ALPHA, collez le prompt compl&eacute;t&eacute; et envoyez. Votre s&eacute;quence de 2 heures sera pr&ecirc;te en quelques secondes.</p>
+    <a class="btn-white" href="https://claude.ai" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Ouvrir Claude et commencer
+    </a>
+  </div>
+</div>
+
+<script>
+function copyPrompt() {
+  const text = document.getElementById('prompt-text').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('copy-btn');
+    btn.classList.add('copy-ok');
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><polyline points="20 6 9 17 4 12"/></svg> Copi&eacute; !';
+    setTimeout(() => {
+      btn.classList.remove('copy-ok');
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copier le prompt';
+    }, 2500);
+  }).catch(() => {
+    alert('Sélectionnez le texte manuellement et faites Ctrl+C');
+  });
+}
+</script>
 </body>
 </html>
