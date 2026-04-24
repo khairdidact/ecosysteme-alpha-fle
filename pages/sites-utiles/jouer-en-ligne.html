@@ -1,30 +1,33 @@
-<!-- ============================================ -->
-<!-- FICHIER : pages/sites-utiles/jouer-en-ligne.html -->
-<!-- ============================================ -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jouer en ligne - Formateurs FLE Armée du Salut</title>
-    <meta name="description" content="Applications et jeux sérieux pour apprendre le français en s'amusant.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="icon" href="../../assets/images/favicon.ico">
+    <style>
+        .btn, .btn-link { background: #A1004E !important; }
+        .btn:hover { background: #C12872 !important; }
+        .hero { height: auto; min-height: 180px; padding: 2rem 1rem; }
+        .content-card { max-width: 1000px; margin: 0 auto; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; margin-bottom: 2rem; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .image-card img { width: 100%; border-radius: 12px; }
+        .download-card { text-align: center; background: #f8f9fa; padding: 2rem; border-radius: 16px; margin-top: 2rem; }
+        .flex-grid { display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; }
+        .flex-grid > * { flex: 1; min-width: 280px; }
+    </style>
 </head>
 <body>
-    <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <nav class="navbar">
         <div class="navbar-container">
-            <a href="../../" class="navbar-logo" aria-label="Accueil">
-                <img src="../../assets/images/logo.png" alt="Logo Armée du Salut" class="logo-img">
-                <span class="navbar-title">Formateurs de Français</span>
-            </a>
-            <a href="https://www.armeedusalut.fr/" target="_blank" rel="noopener" class="navbar-foundation-link">Fondation Armée du Salut</a>
-            <button class="navbar-toggle" aria-label="Menu" aria-expanded="false" id="menu-toggle">
-                <span class="hamburger"></span>
-            </button>
+            <a href="../../" class="navbar-logo"><img src="../../assets/images/logo.png" alt="Logo"><span>Formateurs de Français</span></a>
+            <a href="https://www.armeedusalut.fr/" target="_blank" class="navbar-foundation-link">Fondation Armée du Salut</a>
+            <button class="navbar-toggle" id="menu-toggle"><span class="hamburger"></span></button>
             <ul class="navbar-menu" id="navbar-menu">
                 <li class="nav-item"><a href="../../" class="nav-link">Accueil</a></li>
                 <li class="nav-item"><a href="../agir-suivant-des-valeurs/" class="nav-link">Agir suivant des valeurs</a></li>
@@ -52,33 +55,28 @@
     </header>
 
     <main class="content-section">
-        <div class="container">
-            <div class="card-grid" style="margin-bottom: 2rem;">
-                <article class="card">
-                    <div class="card-content">
-                        <h3 style="margin-bottom: 0.5rem;">🎬 Teaser – Pas à pas</h3>
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
-                            <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/7wB3AjkcNXY" title="Teaser application Pas à pas" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </article>
-                <article class="card">
-                    <img src="../../assets/images/card-jeux.jpg" alt="Illustration Pas à pas" class="card-image" style="object-fit: cover;" onerror="this.src='https://placehold.co/800x400?text=Pas+à+pas'">
-                    <div class="card-content">
-                        <p class="zfr3Q">Découvrez Pas à pas, la première application d’apprentissage du français pour débutants complets, développée par le CAVILAM – Alliance française. Une version améliorée est disponible sous le nom « Français premiers pas ».</p>
-                    </div>
-                </article>
+        <div class="container content-card">
+            <div class="flex-grid">
+                <!-- Vidéo teaser -->
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/7wB3AjkcNXY" title="Teaser Pas à pas" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <!-- Image Pas à pas (remplacée par pasapa.png) -->
+                <div class="image-card">
+                    <img src="../../assets/images/pasapa.png" alt="Application Pas à pas" style="width:100%; border-radius: 12px;">
+                    <p class="zfr3Q" style="margin-top: 1rem; text-align: center;">Découvrez Pas à pas, la première application d’apprentissage du français pour débutants complets, développée par le CAVILAM – Alliance française. Une version améliorée est disponible sous le nom « Français premiers pas ».</p>
+                </div>
             </div>
 
-            <div class="card" style="background: #f8f9fa; padding: 1.5rem; text-align: center;">
+            <div class="download-card">
                 <h3 style="color: #1a3a5c;">📥 Télécharger Pas à pas pour Windows</h3>
-                <a href="https://drive.google.com/uc?export=download&id=1kIbBnrysXp1DwCC5NK-PcOQsGXECgm98" class="btn btn--whatsapp" style="background:#1a73e8; margin-top: 1rem; display: inline-flex; gap:10px;">⬇️ Télécharger l'application Windows</a>
+                <a href="https://drive.google.com/uc?export=download&id=1kIbBnrysXp1DwCC5NK-PcOQsGXECgm98" class="btn btn--whatsapp" style="background:#A1004E; margin-top: 1rem; display: inline-flex; gap:10px;">⬇️ Télécharger l'application Windows</a>
                 <p class="zfr3Q" style="margin-top: 1rem;">Application gratuite, idéale pour une utilisation en atelier ou en autonomie.</p>
             </div>
         </div>
     </main>
 
-    <footer class="footer" role="contentinfo">
+    <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col"><h3>Contact</h3><p>contact@khairdidact.com</p><p>+33 7 67 47 04 94</p></div>
@@ -88,7 +86,6 @@
             <div class="footer-bottom"><p>&copy; 2024 Fondation Armée du Salut - Formateurs de Français</p></div>
         </div>
     </footer>
-
     <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>
