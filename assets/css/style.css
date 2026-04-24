@@ -21,6 +21,19 @@ html {
     scroll-behavior: smooth;
 }
 
+<script>
+  document.querySelectorAll('.nav-item').forEach(item => {
+    const sub = item.querySelector('.nav-submenu');
+    if (!sub) return;
+    item.addEventListener('mouseenter', () => {
+      sub.style.display = 'flex';
+    });
+    item.addEventListener('mouseleave', () => {
+      sub.style.display = 'none';
+    });
+  });
+</script>
+
 body {
     font-family: 'Merriweather', Georgia, serif;
     font-size: 1rem;
