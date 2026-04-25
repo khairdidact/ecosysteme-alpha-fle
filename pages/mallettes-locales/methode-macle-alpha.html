@@ -359,8 +359,6 @@
             font-weight: bold;
             flex-shrink: 0;
         }
-
-        /* Bloc Guide d'utilisation */
         .usage-block {
             background: white;
             border: 1px solid #d1cdc4;
@@ -421,7 +419,6 @@
         .usage-principle strong {
             color: #1a3a5c;
         }
-
         .cta-block {
             background: #e8540a;
             border-radius: 14px;
@@ -499,20 +496,19 @@
     </style>
 </head>
 <body>
+    <!-- ========== NAVBAR CORRIGÉE (identique à la page d'accueil) ========== -->
     <nav class="navbar" role="navigation" aria-label="Navigation principale">
         <div class="navbar-container">
             <a href="/ecosysteme-alpha-fle/" class="navbar-logo" aria-label="Accueil">
                 <img src="/ecosysteme-alpha-fle/assets/images/logo.png" alt="Logo Armée du Salut" class="logo-img">
                 <span class="navbar-title">Formateurs de Français</span>
-                <span class="navbar-subtitle">Fondation Armée du Salut</span>
             </a>
+            <a href="https://www.armeedusalut.fr/" target="_blank" rel="noopener" class="navbar-foundation-link">Fondation Armée du Salut</a>
             <button class="navbar-toggle" aria-label="Menu" aria-expanded="false" id="menu-toggle">
                 <span class="hamburger"></span>
             </button>
             <ul class="navbar-menu" id="navbar-menu">
-                <li class="nav-item">
-                    <a href="/ecosysteme-alpha-fle/" class="nav-link">Accueil</a>
-                </li>
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/" class="nav-link">Accueil</a></li>
                 <li class="nav-item">
                     <a href="/ecosysteme-alpha-fle/pages/agir-suivant-des-valeurs/" class="nav-link">Agir suivant des valeurs</a>
                     <ul class="nav-submenu">
@@ -521,13 +517,33 @@
                     </ul>
                 </li>
                 <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/gerer-un-groupe.html" class="nav-link">Gérer un groupe</a></li>
+                <!-- Employer une méthode : sous‑menu supprimé -->
+                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/employer-une-methode/" class="nav-link">Employer une méthode</a></li>
                 <li class="nav-item">
-                    <a href="/ecosysteme-alpha-fle/pages/employer-une-methode/" class="nav-link">Employer une méthode</a>
+                    <a href="/ecosysteme-alpha-fle/pages/supports-telechargeables/" class="nav-link">Supports</a>
+                    <ul class="nav-submenu">
+                        <li><a href="/ecosysteme-alpha-fle/pages/supports-telechargeables/pictos.html">Pictos</a></li>
+                        <li><a href="/ecosysteme-alpha-fle/pages/supports-telechargeables/planches.html">Planches</a></li>
+                        <li><a href="/ecosysteme-alpha-fle/pages/supports-telechargeables/activites.html">Activités</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/supports-telechargeables/" class="nav-link">Supports</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/sites-utiles/" class="nav-link">Sites utiles</a></li>
+                <li class="nav-item">
+                    <a href="/ecosysteme-alpha-fle/pages/sites-utiles/" class="nav-link">Sites utiles</a>
+                    <ul class="nav-submenu">
+                        <li><a href="/ecosysteme-alpha-fle/pages/sites-utiles/jouer-en-ligne.html">Jouer en ligne</a></li>
+                        <li><a href="/ecosysteme-alpha-fle/pages/sites-utiles/creer-ses-applis.html">Créer ses applis</a></li>
+                    </ul>
+                </li>
                 <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/activites-dun-jour.html" class="nav-link">Activités d'un jour</a></li>
-                <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/mallettes-locales/" class="nav-link">Mallettes locales</a></li>
+                <!-- Mallettes locales avec les trois sous‑pages -->
+                <li class="nav-item">
+                    <a href="/ecosysteme-alpha-fle/pages/mallettes-locales/" class="nav-link">Mallettes locales</a>
+                    <ul class="nav-submenu">
+                        <li><a href="/ecosysteme-alpha-fle/pages/mallettes-locales/methode-macle-alpha.html">Méthode MaClé Alpha</a></li>
+                        <li><a href="/ecosysteme-alpha-fle/pages/mallettes-locales/ressources-macle-alpha.html">Ressources MaClé Alpha</a></li>
+                        <li><a href="/ecosysteme-alpha-fle/pages/mallettes-locales/jeux-de-societe.html">Jeux de société</a></li>
+                    </ul>
+                </li>
                 <li class="nav-item"><a href="/ecosysteme-alpha-fle/pages/parcours-durables.html" class="nav-link">Parcours durables</a></li>
                 <li class="nav-item">
                     <a href="/ecosysteme-alpha-fle/pages/evaluer/" class="nav-link">Évaluer</a>
@@ -544,10 +560,10 @@
     </nav>
 
     <main class="content-section">
-        <!-- Le contenu spécifique MaClé ALPHA commence ici -->
         <div class="hero">
             <div class="hero-tag">Méthode recommandée — Alpha / A1.1</div>
-            <h1>MaClé ALPHA</h1>
+            <!-- H1 corrigé selon la demande -->
+            <h1>Méthode MaClé Alpha</h1>
             <p>La méthode rapide d'alphabétisation pour adultes recommandée par la Fondation de l'Armée du Salut — éditions Retz / ScoLibris</p>
         </div>
 
@@ -758,7 +774,7 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                         Cahier d'écriture — Éditions Retz
                     </a>
-                    <a class="btn-white-outline" href="https://khairdidact.github.io/ecosysteme-alpha-fle/pages/mallettes-locales/ressources-macle-alpha.html" target="_blank">
+                    <a class="btn-white-outline" href="/ecosysteme-alpha-fle/pages/mallettes-locales/ressources-macle-alpha.html" target="_blank">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                         Voir les Ressources MaClé Alpha
                     </a>
