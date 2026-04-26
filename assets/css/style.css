@@ -174,11 +174,12 @@ a:hover, a:focus { color: #C6286D; }
     color: #ffffff;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO - version unifiée ===== */
 .hero {
     position: relative;
-    height: 340px;
+    min-height: 340px;           /* remplace la hauteur fixe pour s'adapter au contenu */
     display: flex;
+    flex-direction: column;      /* superposition verticale des enfants directs */
     align-items: center;
     justify-content: center;
     background-color: #7F1146;
@@ -186,13 +187,18 @@ a:hover, a:focus { color: #C6286D; }
     background-size: cover;
     background-position: center;
     text-align: center;
-    padding: 3.75rem 1.5rem;
+    padding: 3rem 1.5rem;
+    gap: 1rem;                   /* espace régulier entre les éléments */
 }
+
+/* Conteneur interne pour les pages qui l'utilisent (ex: accueil) */
 .hero-content {
     position: relative;
     z-index: 1;
     max-width: 900px;
 }
+
+/* Styles pour les titres et sous-titres de l'ancien hero (page accueil) */
 .hero-title {
     color: #FFFFFF;
     font-size: 4rem;
@@ -200,12 +206,57 @@ a:hover, a:focus { color: #C6286D; }
     letter-spacing: -1px;
     line-height: 1;
     margin-bottom: 1.5rem;
-    white-space: normal; /* corrigé : plus de nowrap */
+    white-space: normal;
 }
+
 .hero-subtitle {
     color: #FFFFFF;
     font-family: 'PT Sans', sans-serif;
     font-size: 1.5625rem;
+}
+
+/* ===== NOUVEAUX STYLES pour le hero de la page CECRL ===== */
+/* Ces règles s'appliquent aux enfants directs du .hero (sans .hero-content) */
+.hero .hero-tag {
+    display: inline-block;
+    background: #e8540a;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.5rem 1.2rem;
+    border-radius: 99px;
+    font-family: 'PT Sans', sans-serif;
+    margin: 0;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.2;
+}
+
+.hero p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: 'PT Sans', sans-serif;
+    line-height: 1.6;
+}
+
+/* Pour éviter que les styles ci-dessus n'affectent un éventuel .hero-content */
+.hero-content h1,
+.hero-content p {
+    /* on réinitialise ou on laisse les styles par défaut de .hero-content */
+    color: inherit;
+    font-size: inherit;
+    max-width: none;
+    margin: inherit;
 }
 
 /* ===== SECTIONS ===== */
@@ -324,9 +375,26 @@ a:hover, a:focus { color: #C6286D; }
     .navbar-menu { display: none; flex-direction: column; width: 100%; background-color: #212121; }
     .navbar-menu.active { display: flex; }
     .nav-submenu { position: static; background-color: #2a2a2a; }
-    .hero { height: auto; min-height: 250px; padding: 2rem 1rem; }
+    
+    .hero {
+        min-height: auto;
+        padding: 2rem 1rem;
+    }
     .hero-title { font-size: 2rem; white-space: normal; }
     .hero-subtitle { font-size: 1.125rem; }
+    
+    /* Adaptation du hero CECRL en mobile */
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+    .hero p {
+        font-size: 0.9rem;
+    }
+    .hero .hero-tag {
+        font-size: 0.7rem;
+        padding: 0.4rem 1rem;
+    }
+    
     .card-grid { grid-template-columns: 1fr; }
     .navbar-title { font-size: 1rem; }
 }
