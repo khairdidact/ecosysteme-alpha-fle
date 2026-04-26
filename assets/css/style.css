@@ -177,9 +177,9 @@ a:hover, a:focus { color: #C6286D; }
 /* ===== HERO - version unifiée ===== */
 .hero {
     position: relative;
-    min-height: 340px;           /* remplace la hauteur fixe pour s'adapter au contenu */
+    min-height: 340px;
     display: flex;
-    flex-direction: column;      /* superposition verticale des enfants directs */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #7F1146;
@@ -188,18 +188,17 @@ a:hover, a:focus { color: #C6286D; }
     background-position: center;
     text-align: center;
     padding: 3rem 1.5rem;
-    gap: 1rem;                   /* espace régulier entre les éléments */
+    gap: 1rem;
 }
 
-/* Conteneur interne pour les pages qui l'utilisent (ex: accueil) */
 .hero-content {
     position: relative;
     z-index: 1;
     max-width: 900px;
 }
 
-/* Styles pour les titres et sous-titres de l'ancien hero (page accueil) */
-.hero-title {
+/* Styles pour les titres et sous-titres de l'accueil (classes spécifiques) */
+.hero .hero-title {
     color: #FFFFFF;
     font-size: 4rem;
     font-weight: 700;
@@ -209,14 +208,13 @@ a:hover, a:focus { color: #C6286D; }
     white-space: normal;
 }
 
-.hero-subtitle {
+.hero .hero-subtitle {
     color: #FFFFFF;
     font-family: 'PT Sans', sans-serif;
     font-size: 1.5625rem;
 }
 
 /* ===== NOUVEAUX STYLES pour le hero de la page CECRL ===== */
-/* Ces règles s'appliquent aux enfants directs du .hero (sans .hero-content) */
 .hero .hero-tag {
     display: inline-block;
     background: #e8540a;
@@ -249,10 +247,8 @@ a:hover, a:focus { color: #C6286D; }
     line-height: 1.6;
 }
 
-/* Pour éviter que les styles ci-dessus n'affectent un éventuel .hero-content */
 .hero-content h1,
 .hero-content p {
-    /* on réinitialise ou on laisse les styles par défaut de .hero-content */
     color: inherit;
     font-size: inherit;
     max-width: none;
@@ -380,10 +376,9 @@ a:hover, a:focus { color: #C6286D; }
         min-height: auto;
         padding: 2rem 1rem;
     }
-    .hero-title { font-size: 2rem; white-space: normal; }
-    .hero-subtitle { font-size: 1.125rem; }
+    .hero .hero-title { font-size: 2rem; white-space: normal; }
+    .hero .hero-subtitle { font-size: 1.125rem; }
     
-    /* Adaptation du hero CECRL en mobile */
     .hero h1 {
         font-size: 1.75rem;
     }
