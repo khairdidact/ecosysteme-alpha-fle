@@ -95,6 +95,12 @@ a:hover, a:focus { color: #C6286D; }
     font-size: 0.875rem;
     border-bottom: 1px dotted rgba(255,255,255,0.5);
     margin-left: 2rem;
+    transition: color 0.2s;
+}
+.navbar-foundation-link:hover,
+.navbar-foundation-link:focus {
+    color: #FF4DA3;
+    border-bottom-color: #FF4DA3;
 }
 
 .navbar-toggle {
@@ -137,11 +143,12 @@ a:hover, a:focus { color: #C6286D; }
     text-decoration: none;
     transition: color 0.2s;
 }
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:focus {
     color: #FF4DA3;
 }
 
-/* Sous-menus : par défaut masqués, affichés au survol */
+/* Sous-menus : masqués par défaut */
 .nav-submenu {
     display: none;
     position: absolute;
@@ -155,8 +162,15 @@ a:hover, a:focus { color: #C6286D; }
     z-index: 1001;
 }
 
+/* Ouverture au survol / focus-within (desktop) */
 .nav-item:hover > .nav-submenu,
 .nav-item:focus-within > .nav-submenu {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ouverture via JavaScript (classe pour mobile et accessibilité) */
+.nav-item.submenu-open > .nav-submenu {
     display: flex;
     flex-direction: column;
 }
@@ -169,12 +183,13 @@ a:hover, a:focus { color: #C6286D; }
     text-decoration: none;
     background-color: transparent;
 }
-.nav-submenu a:hover {
+.nav-submenu a:hover,
+.nav-submenu a:focus {
     background-color: rgba(255,77,163,0.2);
     color: #ffffff;
 }
 
-/* ===== HERO - version unifiée ===== */
+/* ===== HERO (version unifiée) ===== */
 .hero {
     position: relative;
     min-height: 340px;
@@ -197,25 +212,34 @@ a:hover, a:focus { color: #C6286D; }
     max-width: 900px;
 }
 
-/* Styles pour les titres et sous-titres de l'accueil (classes spécifiques) */
-.hero .hero-title {
+/* Titre principal du hero (utilise la classe .hero-title) */
+.hero-title {
     color: #FFFFFF;
-    font-size: 4rem;
+    font-family: 'PT Sans', sans-serif;
     font-weight: 700;
-    letter-spacing: -1px;
     line-height: 1;
     margin-bottom: 1.5rem;
+    font-size: 2.5rem;      /* taille par défaut pour les pages intérieures */
+    letter-spacing: -0.5px;
     white-space: normal;
 }
 
-.hero .hero-subtitle {
+/* Modificateur pour un titre plus grand sur l'accueil */
+.hero-title--large {
+    font-size: 4rem;
+    letter-spacing: -1px;
+}
+
+/* Sous-titre du hero */
+.hero-subtitle {
     color: #FFFFFF;
     font-family: 'PT Sans', sans-serif;
     font-size: 1.5625rem;
+    margin-top: 0;
 }
 
-/* ===== NOUVEAUX STYLES pour le hero de la page CECRL ===== */
-.hero .hero-tag {
+/* Tag optionnel (ex: page CECRL) */
+.hero-tag {
     display: inline-block;
     background: #e8540a;
     color: white;
@@ -226,33 +250,7 @@ a:hover, a:focus { color: #C6286D; }
     padding: 0.5rem 1.2rem;
     border-radius: 99px;
     font-family: 'PT Sans', sans-serif;
-    margin: 0;
-}
-
-.hero h1 {
-    color: white;
-    font-size: 2.5rem;
-    font-weight: 700;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.2;
-}
-
-.hero p {
-    color: rgba(255,255,255,0.9);
-    font-size: 1rem;
-    max-width: 600px;
-    margin: 0 auto;
-    font-family: 'PT Sans', sans-serif;
-    line-height: 1.6;
-}
-
-.hero-content h1,
-.hero-content p {
-    color: inherit;
-    font-size: inherit;
-    max-width: none;
-    margin: inherit;
+    margin-bottom: 1rem;
 }
 
 /* ===== SECTIONS ===== */
@@ -306,7 +304,7 @@ a:hover, a:focus { color: #C6286D; }
     padding: 0.75rem 1.5rem;
     background-color: #C12872;
     color: #FFFFFF;
-    font-family: 'Merriweather', serif;
+    font-family: 'PT Sans', sans-serif;   /* aligné avec le reste de l'UI */
     font-size: 0.8125rem;
     text-decoration: none;
     border-radius: 4px;
@@ -359,6 +357,7 @@ a:hover, a:focus { color: #C6286D; }
     border-radius: 8px;
     font-weight: 700;
     text-decoration: none;
+    font-family: 'PT Sans', sans-serif;
 }
 .btn--whatsapp:hover {
     background-color: #1da851;
@@ -376,8 +375,15 @@ a:hover, a:focus { color: #C6286D; }
         min-height: auto;
         padding: 2rem 1rem;
     }
-    .hero .hero-title { font-size: 2rem; white-space: normal; }
-    .hero .hero-subtitle { font-size: 1.125rem; }
+    .hero-title {
+        font-size: 2rem;               /* réduction pour mobile */
+    }
+    .hero-title--large {
+        font-size: 2rem;
+    }
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
     
     .hero h1 {
         font-size: 1.75rem;
@@ -385,7 +391,7 @@ a:hover, a:focus { color: #C6286D; }
     .hero p {
         font-size: 0.9rem;
     }
-    .hero .hero-tag {
+    .hero-tag {
         font-size: 0.7rem;
         padding: 0.4rem 1rem;
     }
